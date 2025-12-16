@@ -1,0 +1,1 @@
+{"version":3,"file":"resource-list.models.js","sourceRoot":"","sources":["../../../../../../../../../packages/modules/rc-ui/src/lib/shared/patterns/resource-list/resource-list.models.ts"],"names":[],"mappings":"","sourcesContent":["export interface RcResourceListHeaderCtx {\n  total: number;\n  filtered: number;\n}\n\nexport type RcId = string | number;\n"]}

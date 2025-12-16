@@ -1,0 +1,27 @@
+{
+  "name": "rc-ui",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "peerDependencies": {
+    "@angular/core": "^20.3.0",
+    "@angular/common": "^20.3.0",
+    "@vcl/ng-vcl": "^3.4.0"
+  },
+  "module": "esm2022/rc-ui.js",
+  "typings": "rc-ui.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./rc-ui.d.ts",
+      "default": "./esm2022/rc-ui.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
+}
