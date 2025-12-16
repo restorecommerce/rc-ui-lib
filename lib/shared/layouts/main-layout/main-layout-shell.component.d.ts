@@ -5,12 +5,12 @@ export declare class RcLayoutShellComponent {
     private router;
     private route;
     facade: RcLayoutFacade;
-    readonly config: import("rc-ui").RcLayoutConfig;
+    readonly config: import("@console/rc-ui").RcLayoutConfig;
     private readonly destroyRef;
     constructor();
     isHandset$: import("rxjs").Observable<boolean>;
     collapsed$: import("rxjs").Observable<boolean>;
-    categories$: import("rxjs").Observable<import("rc-ui").RcLayoutNavCategory[]>;
+    categories$: import("rxjs").Observable<import("@console/rc-ui").RcLayoutNavCategory[]>;
     activeCategory$: import("rxjs").Observable<string>;
     visibleNavItems$: import("rxjs").Observable<RcLayoutNavItem[]>;
     navigate(item: RcLayoutNavItem): void;

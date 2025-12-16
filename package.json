@@ -1,5 +1,5 @@
 {
-  "name": "rc-ui",
+  "name": "@console/rc-ui",
   "version": "0.0.1",
   "sideEffects": false,
   "peerDependencies": {
@@ -7,15 +7,15 @@
     "@angular/common": "^20.3.0",
     "@vcl/ng-vcl": "^3.4.0"
   },
-  "module": "esm2022/rc-ui.js",
-  "typings": "rc-ui.d.ts",
+  "module": "esm2022/console-rc-ui.js",
+  "typings": "console-rc-ui.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     ".": {
-      "types": "./rc-ui.d.ts",
-      "default": "./esm2022/rc-ui.js"
+      "types": "./console-rc-ui.d.ts",
+      "default": "./esm2022/console-rc-ui.js"
     }
   },
   "dependencies": {

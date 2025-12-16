@@ -1,5 +1,5 @@
 /**
  * Generated bundle index. Do not edit.
  */
+/// <amd-module name="@console/rc-ui" />
 export * from './index';
-//# sourceMappingURL=rc-ui.js.map
