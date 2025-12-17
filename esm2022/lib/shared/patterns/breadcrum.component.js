@@ -1,4 +1,3 @@
-// rc-breadcrumb.component.ts
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule, } from '@angular/router';
@@ -227,5 +226,5 @@ export class RcBreadcrumbComponent {
         }], breadcrumbsToExclude: [{
             type: Input
         }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcBreadcrumbComponent, { className: "RcBreadcrumbComponent", filePath: "lib/shared/patterns/breadcrum.component.ts", lineNumber: 78 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcBreadcrumbComponent, { className: "RcBreadcrumbComponent", filePath: "lib/shared/patterns/breadcrum.component.ts", lineNumber: 77 }); })();
 //# sourceMappingURL=breadcrum.component.js.map

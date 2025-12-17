@@ -1,11 +1,22 @@
-import { RcLayoutNavCategoryId, RcLayoutNavItem } from './main-layout-config.model';
+import { EventEmitter } from '@angular/core';
+import { RcLayoutNavCategoryId, RcLayoutNavItem, RcTranslatable } from './main-layout-config.model';
 import { RcLayoutFacade } from './main-layout.facade';
+import { RcHeaderOrganization, RcHeaderUser } from '../header-toolbar';
 import * as i0 from "@angular/core";
 export declare class RcLayoutShellComponent {
     private router;
-    private route;
     facade: RcLayoutFacade;
     readonly config: import("@console/rc-ui").RcLayoutConfig;
+    private readonly t;
+    user: RcHeaderUser | null;
+    organizations: RcHeaderOrganization[];
+    selectedOrganizationId: string | null;
+    showProfile: boolean;
+    showPreferences: boolean;
+    showSignOut: boolean;
+    organizationSelected: EventEmitter<string>;
+    accountAction: EventEmitter<"profile" | "preferences" | "sign-out">;
+    searchChange: EventEmitter<string>;
     private readonly destroyRef;
     constructor();
     isHandset$: import("rxjs").Observable<boolean>;
@@ -13,14 +24,18 @@ export declare class RcLayoutShellComponent {
     categories$: import("rxjs").Observable<import("@console/rc-ui").RcLayoutNavCategory[]>;
     activeCategory$: import("rxjs").Observable<string>;
     visibleNavItems$: import("rxjs").Observable<RcLayoutNavItem[]>;
+    label$(v: RcTranslatable): import("rxjs").Observable<string>;
     navigate(item: RcLayoutNavItem): void;
     onToggleSidebar(isHandset: boolean | null): void;
     toggleSidebar(): void;
     onSelectCategory(id: RcLayoutNavCategoryId): void;
+    onSearchChange(term: string): void;
+    onSelectOrganization(id: string): void;
+    onAccountItemSelected(value: string): void;
     private getFirstNavItemForCategory;
     private flattenNavItems;
     private syncCategoryWithUrl;
     private routeMatchesUrl;
     static ɵfac: i0.ɵɵFactoryDeclaration<RcLayoutShellComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RcLayoutShellComponent, "rc-layout-shell", never, {}, {}, never, ["*"], true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RcLayoutShellComponent, "rc-layout-shell", never, { "user": { "alias": "user"; "required": false; }; "organizations": { "alias": "organizations"; "required": false; }; "selectedOrganizationId": { "alias": "selectedOrganizationId"; "required": false; }; "showProfile": { "alias": "showProfile"; "required": false; }; "showPreferences": { "alias": "showPreferences"; "required": false; }; "showSignOut": { "alias": "showSignOut"; "required": false; }; }, { "organizationSelected": "organizationSelected"; "accountAction": "accountAction"; "searchChange": "searchChange"; }, never, ["*"], true, never>;
 }
