@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output, } from '@angular/core';
 import { VCLFormControlGroupModule, VCLSelectModule, VCLSelectListModule, } from '@vcl/ng-vcl';
-import { RS_TRANSLATE } from '../../i18n.tokens';
+import { RS_TRANSLATE } from '../../i18n/i18n.tokens';
 import * as i0 from "@angular/core";
 import * as i1 from "@vcl/ng-vcl";
 import * as i2 from "@angular/common";

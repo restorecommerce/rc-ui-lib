@@ -8,7 +8,7 @@ import { RcLayoutFacade } from './main-layout.facade';
 import { RC_LAYOUT_CONFIG } from './main-layout.tokens';
 import { RcBannerComponent, RcBreadcrumbComponent, RcCategorySelectComponent, } from '../../patterns';
 import { RcHeaderToolbarComponent, } from '../header-toolbar';
-import { RS_TRANSLATE } from '../../../i18n.tokens';
+import { RS_TRANSLATE } from '../../../i18n/i18n.tokens';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
 import * as i2 from "@vcl/ng-vcl";

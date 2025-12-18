@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, inject, 
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { VCLButtonModule, VCLDataListModule, VCLIcogramModule, VCLIconModule, VCLInputModule, VCLPopoverModule, VCLSelectListModule, } from '@vcl/ng-vcl';
-import { RS_TRANSLATE } from '../../../i18n.tokens';
+import { RS_TRANSLATE } from '../../../i18n/i18n.tokens';
 import { RC_LAYOUT_CONFIG } from '../main-layout';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/forms";
