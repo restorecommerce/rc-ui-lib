@@ -14,6 +14,8 @@ const _c0 = () => ({ key: "auth.signIn.title", fallback: "Sign in" });
 const _c1 = () => ({ key: "auth.signIn.identifierLabel", fallback: "Email or Username" });
 const _c2 = () => ({ key: "auth.signIn.passwordLabel", fallback: "Password" });
 const _c3 = () => ({ key: "auth.signIn.remember7Days", fallback: "Stay signed in for 7 days" });
+const _c4 = () => ({ key: "auth.signIn.submit", fallback: "Sign in" });
+const _c5 = () => ({ key: "auth.signIn.forgotPassword", fallback: "Forgot Password?" });
 function RcSignInComponent_Conditional_2_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "span");
     i0.ɵɵelement(1, "img", 11);
@@ -49,6 +51,7 @@ export class RcSignInComponent {
             logoUrl: '',
             logoAlt: 'App logo',
             tagline: '',
+            forgotPasswordRoute: 'password-recovery',
         };
         const base = this.config ?? fallback;
         return {
@@ -56,7 +59,11 @@ export class RcSignInComponent {
             logoUrl: this.logoUrl ?? base.logoUrl,
             logoAlt: this.logoAlt ?? base.logoAlt ?? base.appName,
             tagline: this.tagline ?? base.tagline,
+            forgotPasswordRoute: base?.forgotPasswordRoute,
         };
+    }
+    asRouteLink(route) {
+        return Array.isArray(route) ? route : [route];
     }
     onSubmit() {
         if (this.form.invalid) {
@@ -71,7 +78,7 @@ export class RcSignInComponent {
         this.signIn.emit(payload);
     }
     static ɵfac = function RcSignInComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || RcSignInComponent)(); };
-    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcSignInComponent, selectors: [["rc-sign-in"]], inputs: { appName: "appName", logoUrl: "logoUrl", logoAlt: "logoAlt", tagline: "tagline" }, outputs: { signIn: "signIn" }, decls: 37, vars: 28, consts: [[1, "w-100p", "col", "justify-center", "align-items-center", "mt-3", "mb-2"], [1, "p-2"], [1, "mt-1", "row", "justify-center", "align-item-center"], ["vclForm", "", 1, "form", 3, "ngSubmit", "formGroup"], ["vclInput", "", "formControlName", "identifier"], ["vclInput", "", "formControlName", "password"], ["formControlName", "remember"], [1, "row"], ["vcl-button", "", "type", "submit", 1, "w-100p", 3, "disabled"], [1, "mt-3"], ["routerLink", "password-recovery"], ["width", "100", 3, "src", "alt"]], template: function RcSignInComponent_Template(rf, ctx) { if (rf & 1) {
+    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcSignInComponent, selectors: [["rc-sign-in"]], inputs: { appName: "appName", logoUrl: "logoUrl", logoAlt: "logoAlt", tagline: "tagline" }, outputs: { signIn: "signIn" }, decls: 41, vars: 40, consts: [[1, "w-100p", "col", "justify-center", "align-items-center", "mt-3", "mb-2"], [1, "p-2"], [1, "mt-1", "row", "justify-center", "align-item-center"], ["vclForm", "", 1, "form", 3, "ngSubmit", "formGroup"], ["vclInput", "", "formControlName", "identifier"], ["vclInput", "", "formControlName", "password"], ["formControlName", "remember"], [1, "row"], ["vcl-button", "", "type", "submit", 1, "w-100p", 3, "disabled"], [1, "mt-3"], ["routerLink", "asRouteLink(branding.forgotPasswordRoute)"], ["width", "100", 3, "src", "alt"]], template: function RcSignInComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "rc-auth-layout")(1, "div", 0);
             i0.ɵɵconditionalCreate(2, RcSignInComponent_Conditional_2_Template, 2, 2, "span");
             i0.ɵɵelementStart(3, "h3", 1);
@@ -107,10 +114,14 @@ export class RcSignInComponent {
             i0.ɵɵpipe(30, "async");
             i0.ɵɵelementEnd()();
             i0.ɵɵelementStart(31, "div", 7)(32, "button", 8);
-            i0.ɵɵtext(33, " Sign in ");
+            i0.ɵɵtext(33);
+            i0.ɵɵpipe(34, "rsTranslate");
+            i0.ɵɵpipe(35, "async");
             i0.ɵɵelementEnd()();
-            i0.ɵɵelementStart(34, "p", 9)(35, "a", 10);
-            i0.ɵɵtext(36, "Forgot Password?");
+            i0.ɵɵelementStart(36, "p", 9)(37, "a", 10);
+            i0.ɵɵtext(38);
+            i0.ɵɵpipe(39, "rsTranslate");
+            i0.ɵɵpipe(40, "async");
             i0.ɵɵelementEnd()()()();
         } if (rf & 2) {
             i0.ɵɵadvance(2);
@@ -118,17 +129,21 @@ export class RcSignInComponent {
             i0.ɵɵadvance(2);
             i0.ɵɵtextInterpolate(ctx.branding.appName);
             i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(9, 10, i0.ɵɵpipeBind1(8, 8, i0.ɵɵpureFunction0(24, _c0))));
+            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(9, 12, i0.ɵɵpipeBind1(8, 10, i0.ɵɵpureFunction0(34, _c0))));
             i0.ɵɵadvance(4);
             i0.ɵɵproperty("formGroup", ctx.form);
             i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(16, 14, i0.ɵɵpipeBind1(15, 12, i0.ɵɵpureFunction0(25, _c1))));
+            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(16, 16, i0.ɵɵpipeBind1(15, 14, i0.ɵɵpureFunction0(35, _c1))));
             i0.ɵɵadvance(7);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(23, 18, i0.ɵɵpipeBind1(22, 16, i0.ɵɵpureFunction0(26, _c2))), " Password");
+            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(23, 20, i0.ɵɵpipeBind1(22, 18, i0.ɵɵpureFunction0(36, _c2))), " ");
             i0.ɵɵadvance(7);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(30, 22, i0.ɵɵpipeBind1(29, 20, i0.ɵɵpureFunction0(27, _c3))), " ");
+            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(30, 24, i0.ɵɵpipeBind1(29, 22, i0.ɵɵpureFunction0(37, _c3))), " ");
             i0.ɵɵadvance(4);
             i0.ɵɵproperty("disabled", ctx.form.invalid);
+            i0.ɵɵadvance();
+            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(35, 28, i0.ɵɵpipeBind1(34, 26, i0.ɵɵpureFunction0(38, _c4))), " ");
+            i0.ɵɵadvance(5);
+            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(40, 32, i0.ɵɵpipeBind1(39, 30, i0.ɵɵpureFunction0(39, _c5))), " ");
         } }, dependencies: [ReactiveFormsModule, i1.ɵNgNoValidate, i1.DefaultValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.FormGroupDirective, i1.FormControlName, VCLCheckboxModule, i2.VCLCheckboxComponent, VCLButtonModule, i2.VCLButtonComponent, VCLInputModule, i2.InputDirective, i2.InputFieldComponent, i2.FormControlGroupComponent, i2.VCLLabelDirective, i2.FormDirective, i2.EmbeddedInputFieldLabelDirective, VCLFormControlGroupModule,
             VCLPasswordInputModule, i2.VCLPasswordInputComponent, RouterModule, i3.RouterLink, RsAuthLayoutComponent,
             RsTranslatePipe,
@@ -147,7 +162,7 @@ export class RcSignInComponent {
                     RsAuthLayoutComponent,
                     RsTranslatePipe,
                     AsyncPipe,
-                ], template: "<rc-auth-layout>\n  <div class=\"w-100p col justify-center align-items-center mt-3 mb-2\">\n    @if (branding.logoUrl) {\n    <span>\n      <img\n        width=\"100\"\n        [src]=\"branding.logoUrl\"\n        [alt]=\"branding.logoAlt\"\n      />\n    </span>\n    }\n    <h3 class=\"p-2\">{{ branding.appName }}</h3>\n  </div>\n  <div class=\"mt-1 row justify-center align-item-center\">\n    <span>{{\n      { key: 'auth.signIn.title', fallback: 'Sign in' } | rsTranslate | async\n    }}</span>\n  </div>\n  <hr />\n  <form\n    vclForm\n    class=\"form\"\n    [formGroup]=\"form\"\n    (ngSubmit)=\"onSubmit()\"\n  >\n    <vcl-form-control-group>\n      <vcl-label>{{\n        { key: 'auth.signIn.identifierLabel', fallback: 'Email or Username' }\n          | rsTranslate\n          | async\n      }}</vcl-label>\n      <vcl-input-field>\n        <input\n          vclInput\n          formControlName=\"identifier\"\n        />\n      </vcl-input-field>\n    </vcl-form-control-group>\n\n    <vcl-form-control-group>\n      <vcl-label>\n        {{\n          { key: 'auth.signIn.passwordLabel', fallback: 'Password' }\n            | rsTranslate\n            | async\n        }}\n        Password</vcl-label\n      >\n      <vcl-password-input>\n        <input\n          vclInput\n          formControlName=\"password\"\n        />\n      </vcl-password-input>\n    </vcl-form-control-group>\n\n    <vcl-form-control-group>\n      <vcl-checkbox formControlName=\"remember\">\n        {{\n          {\n            key: 'auth.signIn.remember7Days',\n            fallback: 'Stay signed in for 7 days'\n          }\n            | rsTranslate\n            | async\n        }}\n      </vcl-checkbox>\n    </vcl-form-control-group>\n\n    <div class=\"row\">\n      <button\n        [disabled]=\"form.invalid\"\n        vcl-button\n        type=\"submit\"\n        class=\"w-100p\"\n      >\n        Sign in\n      </button>\n    </div>\n\n    <p class=\"mt-3\">\n      <a routerLink=\"password-recovery\">Forgot Password?</a>\n    </p>\n  </form>\n</rc-auth-layout>\n" }]
+                ], template: "<rc-auth-layout>\n  <div class=\"w-100p col justify-center align-items-center mt-3 mb-2\">\n    @if (branding.logoUrl) {\n    <span>\n      <img\n        width=\"100\"\n        [src]=\"branding.logoUrl\"\n        [alt]=\"branding.logoAlt\"\n      />\n    </span>\n    }\n    <h3 class=\"p-2\">{{ branding.appName }}</h3>\n  </div>\n  <div class=\"mt-1 row justify-center align-item-center\">\n    <span>{{\n      { key: 'auth.signIn.title', fallback: 'Sign in' } | rsTranslate | async\n    }}</span>\n  </div>\n  <hr />\n  <form\n    vclForm\n    class=\"form\"\n    [formGroup]=\"form\"\n    (ngSubmit)=\"onSubmit()\"\n  >\n    <vcl-form-control-group>\n      <vcl-label>{{\n        { key: 'auth.signIn.identifierLabel', fallback: 'Email or Username' }\n          | rsTranslate\n          | async\n      }}</vcl-label>\n      <vcl-input-field>\n        <input\n          vclInput\n          formControlName=\"identifier\"\n        />\n      </vcl-input-field>\n    </vcl-form-control-group>\n\n    <vcl-form-control-group>\n      <vcl-label>\n        {{\n          { key: 'auth.signIn.passwordLabel', fallback: 'Password' }\n            | rsTranslate\n            | async\n        }}\n      </vcl-label>\n      <vcl-password-input>\n        <input\n          vclInput\n          formControlName=\"password\"\n        />\n      </vcl-password-input>\n    </vcl-form-control-group>\n\n    <vcl-form-control-group>\n      <vcl-checkbox formControlName=\"remember\">\n        {{\n          {\n            key: 'auth.signIn.remember7Days',\n            fallback: 'Stay signed in for 7 days'\n          }\n            | rsTranslate\n            | async\n        }}\n      </vcl-checkbox>\n    </vcl-form-control-group>\n\n    <div class=\"row\">\n      <button\n        [disabled]=\"form.invalid\"\n        vcl-button\n        type=\"submit\"\n        class=\"w-100p\"\n      >\n        {{\n          {\n            key: 'auth.signIn.submit',\n            fallback: 'Sign in'\n          }\n            | rsTranslate\n            | async\n        }}\n      </button>\n    </div>\n\n    <p class=\"mt-3\">\n      <a routerLink=\"asRouteLink(branding.forgotPasswordRoute)\">\n        {{\n          {\n            key: 'auth.signIn.forgotPassword',\n            fallback: 'Forgot Password?'\n          }\n            | rsTranslate\n            | async\n        }}\n      </a>\n    </p>\n  </form>\n</rc-auth-layout>\n" }]
     }], null, { appName: [{
             type: Input
         }], logoUrl: [{

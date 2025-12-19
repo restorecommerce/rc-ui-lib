@@ -26,6 +26,7 @@ export declare class RcSignInComponent {
         remember: FormControl;
     };
     get branding(): AuthBrandingConfig;
+    asRouteLink(route: string | any[]): any[];
     onSubmit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RcSignInComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RcSignInComponent, "rc-sign-in", never, { "appName": { "alias": "appName"; "required": false; }; "logoUrl": { "alias": "logoUrl"; "required": false; }; "logoAlt": { "alias": "logoAlt"; "required": false; }; "tagline": { "alias": "tagline"; "required": false; }; }, { "signIn": "signIn"; }, never, never, true, never>;
