@@ -10,7 +10,7 @@ function RcBannerComponent_Conditional_0_Template(rf, ctx) { if (rf & 1) {
     const ctx_r0 = i0.ɵɵnextContext();
     i0.ɵɵproperty("routerLink", ctx_r0.logoLink);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("alt", ctx_r0.brandName)("src", ctx_r0.logoUrl, i0.ɵɵsanitizeUrl);
+    i0.ɵɵproperty("alt", ctx_r0.brandName)("src", ctx_r0.logoUrl, i0.ɵɵsanitizeUrl)("width", ctx_r0.logoWidth);
 } }
 function RcBannerComponent_Conditional_1_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 1);
@@ -26,12 +26,13 @@ export class RcBannerComponent {
     brandName;
     showName = false;
     logoUrl;
+    logoWidth = 100;
     logoLink;
     static ɵfac = function RcBannerComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || RcBannerComponent)(); };
     static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcBannerComponent, selectors: [["rc-brand"]], hostVars: 4, hostBindings: function RcBannerComponent_HostBindings(rf, ctx) { if (rf & 2) {
             i0.ɵɵclassProp("row", ctx._hostClasses)("center", ctx._hostClasses);
-        } }, inputs: { brandName: "brandName", showName: "showName", logoUrl: "logoUrl", logoLink: "logoLink" }, decls: 2, vars: 2, consts: [[3, "routerLink"], [1, "app-name", "hide-to-sm"], ["role", "presentation", "width", "100", 1, "responsive-image", "logo", 3, "alt", "src"]], template: function RcBannerComponent_Template(rf, ctx) { if (rf & 1) {
-            i0.ɵɵconditionalCreate(0, RcBannerComponent_Conditional_0_Template, 2, 3, "a", 0);
+        } }, inputs: { brandName: "brandName", showName: "showName", logoUrl: "logoUrl", logoWidth: "logoWidth", logoLink: "logoLink" }, decls: 2, vars: 2, consts: [[3, "routerLink"], [1, "app-name", "hide-to-sm"], ["role", "presentation", 1, "responsive-image", "logo", 3, "alt", "src", "width"]], template: function RcBannerComponent_Template(rf, ctx) { if (rf & 1) {
+            i0.ɵɵconditionalCreate(0, RcBannerComponent_Conditional_0_Template, 2, 4, "a", 0);
             i0.ɵɵconditionalCreate(1, RcBannerComponent_Conditional_1_Template, 2, 1, "span", 1);
         } if (rf & 2) {
             i0.ɵɵconditional(ctx.logoUrl ? 0 : -1);
@@ -51,7 +52,7 @@ export class RcBannerComponent {
         [src]="logoUrl"
         class="responsive-image logo"
         role="presentation"
-        width="100"
+        [width]="logoWidth"
       />
     </a>
     } @if (showName) {
@@ -74,6 +75,8 @@ export class RcBannerComponent {
         }], showName: [{
             type: Input
         }], logoUrl: [{
+            type: Input
+        }], logoWidth: [{
             type: Input
         }], logoLink: [{
             type: Input

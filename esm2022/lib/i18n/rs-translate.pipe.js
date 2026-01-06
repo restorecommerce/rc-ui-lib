@@ -1,8 +1,8 @@
 import { Pipe, inject } from '@angular/core';
-import { RS_TRANSLATE } from './i18n.tokens';
+import { RC_TRANSLATE } from './i18n.tokens';
 import * as i0 from "@angular/core";
 export class RsTranslatePipe {
-    t = inject(RS_TRANSLATE);
+    t = inject(RC_TRANSLATE);
     transform(value) {
         return this.t(value);
     }
