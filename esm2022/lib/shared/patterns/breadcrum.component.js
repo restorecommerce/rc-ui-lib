@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule, } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
@@ -14,52 +14,55 @@ function RcBreadcrumbComponent_Conditional_0_Conditional_2_Template(rf, ctx) { i
     i0.ɵɵelementStart(0, "li")(1, "a", 2);
     i0.ɵɵtext(2);
     i0.ɵɵpipe(3, "rcTranslate");
+    i0.ɵɵpipe(4, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelement(4, "vcl-icon", 3);
+    i0.ɵɵelement(5, "vcl-icon", 3);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const ctx_r0 = i0.ɵɵnextContext(2);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("routerLink", i0.ɵɵpureFunction1(4, _c0, ctx_r0.rootUrl));
+    i0.ɵɵproperty("routerLink", i0.ɵɵpureFunction1(6, _c0, ctx_r0.rootUrl));
     i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 2, ctx_r0.rootLabel), " ");
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(4, 4, i0.ɵɵpipeBind1(3, 2, ctx_r0.rootLabel)), " ");
 } }
 function RcBreadcrumbComponent_Conditional_0_For_4_Conditional_1_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "a", 2);
     i0.ɵɵtext(1);
     i0.ɵɵpipe(2, "rcTranslate");
+    i0.ɵɵpipe(3, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelement(3, "vcl-icon", 3);
+    i0.ɵɵelement(4, "vcl-icon", 3);
 } if (rf & 2) {
     const breadcrumb_r2 = i0.ɵɵnextContext().$implicit;
     i0.ɵɵproperty("routerLink", breadcrumb_r2.url);
     i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(2, 2, breadcrumb_r2.label), " ");
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 4, i0.ɵɵpipeBind1(2, 2, breadcrumb_r2.label)), " ");
 } }
 function RcBreadcrumbComponent_Conditional_0_For_4_Conditional_2_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 4);
     i0.ɵɵtext(1);
     i0.ɵɵpipe(2, "rcTranslate");
+    i0.ɵɵpipe(3, "async");
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const breadcrumb_r2 = i0.ɵɵnextContext().$implicit;
     i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(2, 1, breadcrumb_r2.label), " ");
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 3, i0.ɵɵpipeBind1(2, 1, breadcrumb_r2.label)), " ");
 } }
 function RcBreadcrumbComponent_Conditional_0_For_4_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "li", 1);
-    i0.ɵɵconditionalCreate(1, RcBreadcrumbComponent_Conditional_0_For_4_Conditional_1_Template, 4, 4)(2, RcBreadcrumbComponent_Conditional_0_For_4_Conditional_2_Template, 3, 3, "span", 4);
+    i0.ɵɵconditionalCreate(1, RcBreadcrumbComponent_Conditional_0_For_4_Conditional_1_Template, 5, 6)(2, RcBreadcrumbComponent_Conditional_0_For_4_Conditional_2_Template, 4, 5, "span", 4);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    const ɵ$index_15_r3 = ctx.$index;
-    const ɵ$count_15_r4 = ctx.$count;
-    i0.ɵɵproperty("ngClass", i0.ɵɵpureFunction1(2, _c1, ɵ$index_15_r3 === ɵ$count_15_r4 - 1));
+    const ɵ$index_16_r3 = ctx.$index;
+    const ɵ$count_16_r4 = ctx.$count;
+    i0.ɵɵproperty("ngClass", i0.ɵɵpureFunction1(2, _c1, ɵ$index_16_r3 === ɵ$count_16_r4 - 1));
     i0.ɵɵadvance();
-    i0.ɵɵconditional(!(ɵ$index_15_r3 === ɵ$count_15_r4 - 1) ? 1 : 2);
+    i0.ɵɵconditional(!(ɵ$index_16_r3 === ɵ$count_16_r4 - 1) ? 1 : 2);
 } }
 function RcBreadcrumbComponent_Conditional_0_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "nav", 0)(1, "ol");
-    i0.ɵɵconditionalCreate(2, RcBreadcrumbComponent_Conditional_0_Conditional_2_Template, 5, 6, "li");
+    i0.ɵɵconditionalCreate(2, RcBreadcrumbComponent_Conditional_0_Conditional_2_Template, 6, 8, "li");
     i0.ɵɵrepeaterCreate(3, RcBreadcrumbComponent_Conditional_0_For_4_Template, 3, 4, "li", 1, _forTrack0);
     i0.ɵɵelementEnd()();
 } if (rf & 2) {
@@ -166,14 +169,14 @@ export class RcBreadcrumbComponent {
             i0.ɵɵconditionalCreate(0, RcBreadcrumbComponent_Conditional_0_Template, 5, 1, "nav", 0);
         } if (rf & 2) {
             i0.ɵɵconditional(ctx.breadcrumbs.length && !ctx.breadcrumbsToExclude.includes(ctx.lastLabel) ? 0 : -1);
-        } }, dependencies: [NgClass, RouterModule, i1.RouterLink, VCLIconModule, i2.VCLIconComponent, RcTranslatePipe], encapsulation: 2, changeDetection: 0 });
+        } }, dependencies: [NgClass, RouterModule, i1.RouterLink, VCLIconModule, i2.VCLIconComponent, AsyncPipe, RcTranslatePipe], encapsulation: 2, changeDetection: 0 });
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(RcBreadcrumbComponent, [{
         type: Component,
         args: [{
                 selector: 'rc-breadcrumb',
                 standalone: true,
-                imports: [NgClass, RouterModule, VCLIconModule, RcTranslatePipe],
+                imports: [NgClass, AsyncPipe, RouterModule, VCLIconModule, RcTranslatePipe],
                 template: `
     @if (breadcrumbs.length && !breadcrumbsToExclude.includes(lastLabel)) {
     <nav class="breadcrumb-nav">
@@ -184,7 +187,7 @@ export class RcBreadcrumbComponent {
             [routerLink]="[rootUrl]"
             class="breadcrumb-nav-item-label"
           >
-            {{ rootLabel | rcTranslate }}
+            {{ rootLabel | rcTranslate | async }}
           </a>
           <vcl-icon
             class="breadcrumb-nav-divider"
@@ -202,7 +205,7 @@ export class RcBreadcrumbComponent {
             [routerLink]="breadcrumb.url"
             class="breadcrumb-nav-item-label"
           >
-            {{ breadcrumb.label | rcTranslate }}
+            {{ breadcrumb.label | rcTranslate | async }}
           </a>
           <vcl-icon
             class="breadcrumb-nav-divider"
@@ -210,7 +213,7 @@ export class RcBreadcrumbComponent {
           />
           } @else {
           <span class="breadcrumb-nav-item-label">
-            {{ breadcrumb.label | rcTranslate }}
+            {{ breadcrumb.label | rcTranslate | async }}
           </span>
           }
         </li>
