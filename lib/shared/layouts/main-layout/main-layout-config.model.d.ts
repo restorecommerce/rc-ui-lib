@@ -21,6 +21,14 @@ export interface RcLayoutNavItem {
     requiredPermission?: string;
     categoryId?: RcLayoutNavCategoryId;
 }
+export interface ShellFooterConfig {
+    enabled?: boolean;
+    text?: string;
+    companyName?: string;
+    companyUrl?: string;
+    showYear?: boolean;
+    year?: number;
+}
 export interface RcLayoutConfig {
     appName: string;
     logoUrl?: string;
@@ -39,4 +47,5 @@ export interface RcLayoutConfig {
         preferences?: RcTranslatable;
         signOut?: RcTranslatable;
     };
+    footer?: ShellFooterConfig;
 }

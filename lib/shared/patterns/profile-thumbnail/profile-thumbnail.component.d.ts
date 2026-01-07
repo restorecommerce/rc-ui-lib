@@ -1,6 +1,6 @@
 import * as i0 from "@angular/core";
-export declare class ProfileThumbnailComponent {
+export declare class RcProfileThumbnailComponent {
     avatarUrl: string;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ProfileThumbnailComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ProfileThumbnailComponent, "ui-profile-thumbnail", never, { "avatarUrl": { "alias": "avatarUrl"; "required": false; }; }, {}, never, ["*"], true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RcProfileThumbnailComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RcProfileThumbnailComponent, "rc-profile-thumbnail", never, { "avatarUrl": { "alias": "avatarUrl"; "required": false; }; }, {}, never, ["*"], true, never>;
 }

@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { RcLayoutNavCategoryId, RcLayoutNavItem, RcTranslatable } from './main-layout-config.model';
+import { RcLayoutNavCategoryId, RcLayoutNavItem, RcTranslatable, ShellFooterConfig } from './main-layout-config.model';
 import { RcLayoutFacade } from './main-layout.facade';
 import { RcHeaderOrganization, RcHeaderUser } from '../header-toolbar';
 import * as i0 from "@angular/core";
@@ -24,6 +24,15 @@ export declare class RcLayoutShellComponent {
     categories$: import("rxjs").Observable<import("@console/rc-ui").RcLayoutNavCategory[]>;
     activeCategory$: import("rxjs").Observable<string>;
     visibleNavItems$: import("rxjs").Observable<RcLayoutNavItem[]>;
+    readonly defaultFooterConfig: Required<ShellFooterConfig>;
+    footerConfig: {
+        enabled: boolean;
+        text: string;
+        companyName: string;
+        companyUrl: string;
+        showYear: boolean;
+        year: number;
+    };
     label$(v: RcTranslatable): import("rxjs").Observable<string>;
     navigate(item: RcLayoutNavItem): void;
     onToggleSidebar(isHandset: boolean | null): void;
