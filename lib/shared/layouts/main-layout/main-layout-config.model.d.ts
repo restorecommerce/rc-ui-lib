@@ -36,6 +36,11 @@ export interface RcLayoutConfig {
     navItems: RcLayoutNavItem[];
     basePath?: string;
     categories?: RcLayoutNavCategory[];
+    sidebarToggle?: {
+        openIcon?: string;
+        closeIcon?: string;
+        iconClass?: string;
+    };
     uiText?: {
         showSidebar?: RcTranslatable;
         hideSidebar?: RcTranslatable;

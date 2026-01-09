@@ -6,7 +6,7 @@ import * as i0 from "@angular/core";
 import * as i1 from "@vcl/ng-vcl";
 import * as i2 from "@angular/common";
 const _forTrack0 = ($index, $item) => $item.id;
-function RcCategorySelectComponent_For_6_Template(rf, ctx) { if (rf & 1) {
+function RcCategorySelectComponent_For_4_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "vcl-select-list-item", 1);
     i0.ɵɵtext(1);
     i0.ɵɵpipe(2, "async");
@@ -31,23 +31,18 @@ export class RcCategorySelectComponent {
         return this.t(v);
     }
     static ɵfac = function RcCategorySelectComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || RcCategorySelectComponent)(); };
-    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcCategorySelectComponent, selectors: [["rc-category-select"]], inputs: { label: "label", categories: "categories", value: "value" }, outputs: { valueChange: "valueChange" }, decls: 7, vars: 2, consts: [[3, "valueChange", "value"], [3, "value"]], template: function RcCategorySelectComponent_Template(rf, ctx) { if (rf & 1) {
-            i0.ɵɵelementStart(0, "vcl-form-control-group")(1, "vcl-label");
-            i0.ɵɵtext(2);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(3, "vcl-select")(4, "vcl-select-list", 0);
-            i0.ɵɵlistener("valueChange", function RcCategorySelectComponent_Template_vcl_select_list_valueChange_4_listener($event) { return ctx.onChange($event); });
-            i0.ɵɵrepeaterCreate(5, RcCategorySelectComponent_For_6_Template, 3, 4, "vcl-select-list-item", 1, _forTrack0);
+    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcCategorySelectComponent, selectors: [["rc-category-select"]], inputs: { label: "label", categories: "categories", value: "value" }, outputs: { valueChange: "valueChange" }, decls: 5, vars: 1, consts: [[3, "valueChange", "value"], [3, "value"]], template: function RcCategorySelectComponent_Template(rf, ctx) { if (rf & 1) {
+            i0.ɵɵelementStart(0, "vcl-form-control-group")(1, "vcl-select")(2, "vcl-select-list", 0);
+            i0.ɵɵlistener("valueChange", function RcCategorySelectComponent_Template_vcl_select_list_valueChange_2_listener($event) { return ctx.onChange($event); });
+            i0.ɵɵrepeaterCreate(3, RcCategorySelectComponent_For_4_Template, 3, 4, "vcl-select-list-item", 1, _forTrack0);
             i0.ɵɵelementEnd()()();
         } if (rf & 2) {
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate(ctx.label);
             i0.ɵɵadvance(2);
             i0.ɵɵproperty("value", ctx.value);
             i0.ɵɵadvance();
             i0.ɵɵrepeater(ctx.categories);
         } }, dependencies: [CommonModule,
-            VCLFormControlGroupModule, i1.FormControlGroupComponent, i1.VCLLabelDirective, VCLSelectModule, i1.VCLSelectComponent, i1.EmbeddedInputFieldLabelDirective, VCLSelectListModule, i1.VCLSelectListComponent, i1.VCLSelectListItemComponent, i2.AsyncPipe], encapsulation: 2, changeDetection: 0 });
+            VCLFormControlGroupModule, i1.FormControlGroupComponent, VCLSelectModule, i1.VCLSelectComponent, i1.EmbeddedInputFieldLabelDirective, VCLSelectListModule, i1.VCLSelectListComponent, i1.VCLSelectListItemComponent, i2.AsyncPipe], encapsulation: 2, changeDetection: 0 });
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(RcCategorySelectComponent, [{
         type: Component,
@@ -62,7 +57,7 @@ export class RcCategorySelectComponent {
                 ],
                 template: `
     <vcl-form-control-group>
-      <vcl-label>{{ label }}</vcl-label>
+      <!-- <vcl-label>{{ label }}</vcl-label> -->
 
       <vcl-select>
         <vcl-select-list

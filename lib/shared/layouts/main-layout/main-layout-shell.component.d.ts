@@ -18,12 +18,16 @@ export declare class RcLayoutShellComponent {
     accountAction: EventEmitter<"profile" | "preferences" | "sign-out">;
     searchChange: EventEmitter<string>;
     private readonly destroyRef;
+    readonly defaultOpenIcon = "mdi mdi-page-layout-sidebar-left";
+    readonly defaultCloseIcon = "mdi mdi-page-layout-sidebar-right";
     constructor();
     isHandset$: import("rxjs").Observable<boolean>;
     collapsed$: import("rxjs").Observable<boolean>;
     categories$: import("rxjs").Observable<import("@console/rc-ui").RcLayoutNavCategory[]>;
     activeCategory$: import("rxjs").Observable<string>;
     visibleNavItems$: import("rxjs").Observable<RcLayoutNavItem[]>;
+    icon$: import("rxjs").Observable<string>;
+    iconClass: string;
     readonly defaultFooterConfig: Required<ShellFooterConfig>;
     footerConfig: {
         enabled: boolean;

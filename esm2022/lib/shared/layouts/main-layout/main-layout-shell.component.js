@@ -2,7 +2,7 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, DestroyRef, EventEmitter, inject, Input, Output, } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter, map } from 'rxjs';
 import { VCLButtonModule, VCLDrawerModule, VCLFormControlGroupModule, VCLIcogramModule, VCLIconModule, VCLInputModule, VCLNavigationModule, } from '@vcl/ng-vcl';
 import { RcLayoutFacade } from './main-layout.facade';
 import { RC_LAYOUT_CONFIG } from './main-layout.tokens';
@@ -17,44 +17,44 @@ const _c1 = ["[layoutHeader]", "*"];
 const _c2 = () => [];
 const _c3 = () => ["selected"];
 const _c4 = () => ["Home"];
-function RcLayoutShellComponent_Conditional_12_Conditional_0_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_13_Conditional_0_Template(rf, ctx) { if (rf & 1) {
     const _r1 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 14)(1, "rc-category-select", 15);
     i0.ɵɵpipe(2, "async");
     i0.ɵɵpipe(3, "async");
     i0.ɵɵpipe(4, "async");
-    i0.ɵɵlistener("valueChange", function RcLayoutShellComponent_Conditional_12_Conditional_0_Template_rc_category_select_valueChange_1_listener($event) { i0.ɵɵrestoreView(_r1); const ctx_r1 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r1.onSelectCategory($event)); });
+    i0.ɵɵlistener("valueChange", function RcLayoutShellComponent_Conditional_13_Conditional_0_Template_rc_category_select_valueChange_1_listener($event) { i0.ɵɵrestoreView(_r1); const ctx_r1 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r1.onSelectCategory($event)); });
     i0.ɵɵelementEnd()();
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵadvance();
     i0.ɵɵproperty("label", i0.ɵɵpipeBind1(2, 3, ctx_r1.label$((ctx_r1.config.uiText == null ? null : ctx_r1.config.uiText.selectCategory) || "")) || "")("categories", i0.ɵɵpipeBind1(3, 5, ctx_r1.categories$) || i0.ɵɵpureFunction0(9, _c2))("value", i0.ɵɵpipeBind1(4, 7, ctx_r1.activeCategory$));
 } }
-function RcLayoutShellComponent_Conditional_12_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵconditionalCreate(0, RcLayoutShellComponent_Conditional_12_Conditional_0_Template, 5, 10, "div", 14);
+function RcLayoutShellComponent_Conditional_13_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵconditionalCreate(0, RcLayoutShellComponent_Conditional_13_Conditional_0_Template, 5, 10, "div", 14);
     i0.ɵɵpipe(1, "async");
 } if (rf & 2) {
     let tmp_1_0;
     const ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵconditional((tmp_1_0 = i0.ɵɵpipeBind1(1, 1, ctx_r1.categories$)) ? 0 : -1, tmp_1_0);
 } }
-function RcLayoutShellComponent_For_15_Conditional_4_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_For_16_Conditional_4_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelement(0, "vcl-icon", 17);
 } if (rf & 2) {
     i0.ɵɵnextContext();
     const navItem_r5 = i0.ɵɵreference(1);
     i0.ɵɵproperty("icon", navItem_r5.opened ? "vcl:chevron-down" : "vcl:chevron-right");
 } }
-function RcLayoutShellComponent_For_15_Conditional_5_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_For_16_Conditional_5_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelement(0, "vcl-icon", 17);
 } if (rf & 2) {
     const item_r4 = i0.ɵɵnextContext().$implicit;
     i0.ɵɵproperty("icon", item_r4.icon);
 } }
-function RcLayoutShellComponent_For_15_Conditional_8_For_2_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_For_16_Conditional_8_For_2_Template(rf, ctx) { if (rf & 1) {
     const _r6 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "vcl-navigation-item", 16);
-    i0.ɵɵlistener("click", function RcLayoutShellComponent_For_15_Conditional_8_For_2_Template_vcl_navigation_item_click_0_listener($event) { const child_r7 = i0.ɵɵrestoreView(_r6).$implicit; const ctx_r1 = i0.ɵɵnextContext(3); ctx_r1.navigate(child_r7); return i0.ɵɵresetView($event.stopPropagation()); });
+    i0.ɵɵlistener("click", function RcLayoutShellComponent_For_16_Conditional_8_For_2_Template_vcl_navigation_item_click_0_listener($event) { const child_r7 = i0.ɵɵrestoreView(_r6).$implicit; const ctx_r1 = i0.ɵɵnextContext(3); ctx_r1.navigate(child_r7); return i0.ɵɵresetView($event.stopPropagation()); });
     i0.ɵɵelementStart(1, "vcl-navigation-label")(2, "vcl-icogram");
     i0.ɵɵelement(3, "vcl-icon", 17);
     i0.ɵɵtext(4);
@@ -69,26 +69,26 @@ function RcLayoutShellComponent_For_15_Conditional_8_For_2_Template(rf, ctx) { i
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(5, 4, ctx_r1.label$(child_r7.label)), " ");
 } }
-function RcLayoutShellComponent_For_15_Conditional_8_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_For_16_Conditional_8_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "vcl-navigation");
-    i0.ɵɵrepeaterCreate(1, RcLayoutShellComponent_For_15_Conditional_8_For_2_Template, 6, 7, "vcl-navigation-item", 8, i0.ɵɵrepeaterTrackByIndex);
+    i0.ɵɵrepeaterCreate(1, RcLayoutShellComponent_For_16_Conditional_8_For_2_Template, 6, 7, "vcl-navigation-item", 8, i0.ɵɵrepeaterTrackByIndex);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const item_r4 = i0.ɵɵnextContext().$implicit;
     i0.ɵɵadvance();
     i0.ɵɵrepeater(item_r4.children);
 } }
-function RcLayoutShellComponent_For_15_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_For_16_Template(rf, ctx) { if (rf & 1) {
     const _r3 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "vcl-navigation-item", 16, 0);
-    i0.ɵɵlistener("click", function RcLayoutShellComponent_For_15_Template_vcl_navigation_item_click_0_listener($event) { const item_r4 = i0.ɵɵrestoreView(_r3).$implicit; const ctx_r1 = i0.ɵɵnextContext(); !(item_r4.children == null ? null : item_r4.children.length) && ctx_r1.navigate(item_r4); return i0.ɵɵresetView($event.stopPropagation()); });
+    i0.ɵɵlistener("click", function RcLayoutShellComponent_For_16_Template_vcl_navigation_item_click_0_listener($event) { const item_r4 = i0.ɵɵrestoreView(_r3).$implicit; const ctx_r1 = i0.ɵɵnextContext(); !(item_r4.children == null ? null : item_r4.children.length) && ctx_r1.navigate(item_r4); return i0.ɵɵresetView($event.stopPropagation()); });
     i0.ɵɵelementStart(2, "vcl-navigation-label")(3, "vcl-icogram");
-    i0.ɵɵconditionalCreate(4, RcLayoutShellComponent_For_15_Conditional_4_Template, 1, 1, "vcl-icon", 17);
-    i0.ɵɵconditionalCreate(5, RcLayoutShellComponent_For_15_Conditional_5_Template, 1, 1, "vcl-icon", 17);
+    i0.ɵɵconditionalCreate(4, RcLayoutShellComponent_For_16_Conditional_4_Template, 1, 1, "vcl-icon", 17);
+    i0.ɵɵconditionalCreate(5, RcLayoutShellComponent_For_16_Conditional_5_Template, 1, 1, "vcl-icon", 17);
     i0.ɵɵtext(6);
     i0.ɵɵpipe(7, "async");
     i0.ɵɵelementEnd()();
-    i0.ɵɵconditionalCreate(8, RcLayoutShellComponent_For_15_Conditional_8_Template, 3, 0, "vcl-navigation");
+    i0.ɵɵconditionalCreate(8, RcLayoutShellComponent_For_16_Conditional_8_Template, 3, 0, "vcl-navigation");
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const item_r4 = ctx.$implicit;
@@ -103,32 +103,32 @@ function RcLayoutShellComponent_For_15_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵadvance(2);
     i0.ɵɵconditional((item_r4.children == null ? null : item_r4.children.length) ? 8 : -1);
 } }
-function RcLayoutShellComponent_Conditional_18_Conditional_0_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_19_Conditional_0_Template(rf, ctx) { if (rf & 1) {
     const _r8 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "rc-category-select", 15);
     i0.ɵɵpipe(1, "async");
     i0.ɵɵpipe(2, "async");
-    i0.ɵɵlistener("valueChange", function RcLayoutShellComponent_Conditional_18_Conditional_0_Template_rc_category_select_valueChange_0_listener($event) { i0.ɵɵrestoreView(_r8); const ctx_r1 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r1.onSelectCategory($event)); });
+    i0.ɵɵlistener("valueChange", function RcLayoutShellComponent_Conditional_19_Conditional_0_Template_rc_category_select_valueChange_0_listener($event) { i0.ɵɵrestoreView(_r8); const ctx_r1 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r1.onSelectCategory($event)); });
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵproperty("label", i0.ɵɵpipeBind1(1, 3, ctx_r1.label$((ctx_r1.config.uiText == null ? null : ctx_r1.config.uiText.selectCategory) || "")) || "")("categories", ctx)("value", i0.ɵɵpipeBind1(2, 5, ctx_r1.activeCategory$));
 } }
-function RcLayoutShellComponent_Conditional_18_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵconditionalCreate(0, RcLayoutShellComponent_Conditional_18_Conditional_0_Template, 3, 7, "rc-category-select", 18);
+function RcLayoutShellComponent_Conditional_19_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵconditionalCreate(0, RcLayoutShellComponent_Conditional_19_Conditional_0_Template, 3, 7, "rc-category-select", 18);
     i0.ɵɵpipe(1, "async");
 } if (rf & 2) {
     let tmp_1_0;
     const ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵconditional((tmp_1_0 = i0.ɵɵpipeBind1(1, 1, ctx_r1.categories$)) ? 0 : -1, tmp_1_0);
 } }
-function RcLayoutShellComponent_Conditional_20_Conditional_1_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_21_Conditional_1_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵtext(0);
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵtextInterpolate1(" \u00A9 ", ctx_r1.footerConfig.year, " ");
 } }
-function RcLayoutShellComponent_Conditional_20_Conditional_2_Conditional_0_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_21_Conditional_2_Conditional_0_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "a", 19);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
@@ -138,30 +138,30 @@ function RcLayoutShellComponent_Conditional_20_Conditional_2_Conditional_0_Templ
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", ctx_r1.footerConfig.companyName, " ");
 } }
-function RcLayoutShellComponent_Conditional_20_Conditional_2_Conditional_1_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_21_Conditional_2_Conditional_1_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵtext(0);
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext(3);
     i0.ɵɵtextInterpolate1(" ", ctx_r1.footerConfig.companyName, " ");
 } }
-function RcLayoutShellComponent_Conditional_20_Conditional_2_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵconditionalCreate(0, RcLayoutShellComponent_Conditional_20_Conditional_2_Conditional_0_Template, 2, 2, "a", 19)(1, RcLayoutShellComponent_Conditional_20_Conditional_2_Conditional_1_Template, 1, 1);
+function RcLayoutShellComponent_Conditional_21_Conditional_2_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵconditionalCreate(0, RcLayoutShellComponent_Conditional_21_Conditional_2_Conditional_0_Template, 2, 2, "a", 19)(1, RcLayoutShellComponent_Conditional_21_Conditional_2_Conditional_1_Template, 1, 1);
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵconditional(ctx_r1.footerConfig.companyUrl ? 0 : 1);
 } }
-function RcLayoutShellComponent_Conditional_20_Conditional_3_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_21_Conditional_3_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵtext(0);
     i0.ɵɵpipe(1, "async");
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵtextInterpolate1(" . ", i0.ɵɵpipeBind1(1, 1, ctx_r1.label$(ctx_r1.footerConfig.text)), " ");
 } }
-function RcLayoutShellComponent_Conditional_20_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_21_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "div", 10);
-    i0.ɵɵconditionalCreate(1, RcLayoutShellComponent_Conditional_20_Conditional_1_Template, 1, 1);
-    i0.ɵɵconditionalCreate(2, RcLayoutShellComponent_Conditional_20_Conditional_2_Template, 2, 1);
-    i0.ɵɵconditionalCreate(3, RcLayoutShellComponent_Conditional_20_Conditional_3_Template, 2, 3);
+    i0.ɵɵconditionalCreate(1, RcLayoutShellComponent_Conditional_21_Conditional_1_Template, 1, 1);
+    i0.ɵɵconditionalCreate(2, RcLayoutShellComponent_Conditional_21_Conditional_2_Template, 2, 1);
+    i0.ɵɵconditionalCreate(3, RcLayoutShellComponent_Conditional_21_Conditional_3_Template, 2, 3);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext();
@@ -172,22 +172,26 @@ function RcLayoutShellComponent_Conditional_20_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵadvance();
     i0.ɵɵconditional(ctx_r1.footerConfig.text ? 3 : -1);
 } }
-function RcLayoutShellComponent_Conditional_22_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_Conditional_23_Template(rf, ctx) { if (rf & 1) {
     const _r9 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "button", 6);
     i0.ɵɵpipe(1, "async");
-    i0.ɵɵlistener("click", function RcLayoutShellComponent_Conditional_22_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r9); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.toggleSidebar()); });
+    i0.ɵɵlistener("click", function RcLayoutShellComponent_Conditional_23_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r9); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.toggleSidebar()); });
     i0.ɵɵelement(2, "vcl-icon", 7);
+    i0.ɵɵpipe(3, "async");
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("title", i0.ɵɵpipeBind1(1, 1, ctx_r1.label$((ctx_r1.config.uiText == null ? null : ctx_r1.config.uiText.showSidebar) ?? "Show sidebar")));
+    i0.ɵɵproperty("title", i0.ɵɵpipeBind1(1, 4, ctx_r1.label$((ctx_r1.config.uiText == null ? null : ctx_r1.config.uiText.showSidebar) ?? "Show sidebar")));
+    i0.ɵɵadvance(2);
+    i0.ɵɵclassMap(ctx_r1.iconClass);
+    i0.ɵɵproperty("icon", i0.ɵɵpipeBind1(3, 6, ctx_r1.icon$) || "");
 } }
-function RcLayoutShellComponent_ProjectionFallback_24_Template(rf, ctx) { if (rf & 1) {
+function RcLayoutShellComponent_ProjectionFallback_25_Template(rf, ctx) { if (rf & 1) {
     const _r10 = i0.ɵɵgetCurrentView();
     i0.ɵɵelement(0, "rc-breadcrumb", 20)(1, "div", 21);
     i0.ɵɵelementStart(2, "rc-header-toolbar", 22);
-    i0.ɵɵlistener("organizationSelected", function RcLayoutShellComponent_ProjectionFallback_24_Template_rc_header_toolbar_organizationSelected_2_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.onSelectOrganization($event)); })("accountAction", function RcLayoutShellComponent_ProjectionFallback_24_Template_rc_header_toolbar_accountAction_2_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.onAccountItemSelected($event)); })("searchChange", function RcLayoutShellComponent_ProjectionFallback_24_Template_rc_header_toolbar_searchChange_2_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.onSearchChange($event)); });
+    i0.ɵɵlistener("organizationSelected", function RcLayoutShellComponent_ProjectionFallback_25_Template_rc_header_toolbar_organizationSelected_2_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.onSelectOrganization($event)); })("accountAction", function RcLayoutShellComponent_ProjectionFallback_25_Template_rc_header_toolbar_accountAction_2_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.onAccountItemSelected($event)); })("searchChange", function RcLayoutShellComponent_ProjectionFallback_25_Template_rc_header_toolbar_searchChange_2_listener($event) { i0.ɵɵrestoreView(_r10); const ctx_r1 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r1.onSearchChange($event)); });
     i0.ɵɵelementEnd();
 } if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext();
@@ -230,6 +234,8 @@ export class RcLayoutShellComponent {
     accountAction = new EventEmitter();
     searchChange = new EventEmitter();
     destroyRef = inject(DestroyRef);
+    defaultOpenIcon = 'mdi mdi-page-layout-sidebar-left';
+    defaultCloseIcon = 'mdi mdi-page-layout-sidebar-right';
     constructor() {
         this.facade.initConfig(this.config);
         this.router.events
@@ -243,6 +249,10 @@ export class RcLayoutShellComponent {
     categories$ = this.facade.categories$;
     activeCategory$ = this.facade.activeCategory$;
     visibleNavItems$ = this.facade.visibleNavItems$;
+    icon$ = this.collapsed$.pipe(map((collapsed) => collapsed
+        ? this.config.sidebarToggle?.closeIcon ?? this.defaultCloseIcon
+        : this.config.sidebarToggle?.openIcon ?? this.defaultOpenIcon));
+    iconClass = this.config.sidebarToggle?.iconClass ?? 'scale155p';
     defaultFooterConfig = {
         enabled: true,
         text: 'All rights reserved.',
@@ -352,7 +362,7 @@ export class RcLayoutShellComponent {
         return url === path || url.startsWith(path + '/');
     }
     static ɵfac = function RcLayoutShellComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || RcLayoutShellComponent)(); };
-    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcLayoutShellComponent, selectors: [["rc-layout-shell"]], inputs: { user: "user", organizations: "organizations", selectedOrganizationId: "selectedOrganizationId", showProfile: "showProfile", showPreferences: "showPreferences", showSignOut: "showSignOut" }, outputs: { organizationSelected: "organizationSelected", accountAction: "accountAction", searchChange: "searchChange" }, ngContentSelectors: _c1, decls: 28, vars: 28, consts: [["navItem", "vclNavigationItem"], [1, "layout-shell-container", 3, "backdropClick"], [3, "mode", "opened"], [1, "h-100p", "layout-shell-navigation"], [1, "row", "justify-content-between", "py-1", "px-2"], [3, "brandName", "logoUrl", "logoWidth"], ["vcl-button", "", "square", "", 1, "transparent", 3, "click", "title"], ["icon", "mdi mdi-page-layout-sidebar-left", 1, "scale155p"], ["queryParamsHandling", "preserve", 3, "routerLink", "routerLinkActive"], [1, "py-1", "px-2", "rs-navigation-item-bottom-container"], [1, "vcl-text-muted", "vcl-text-xs", "mt-2"], [1, "row", "align-items-center", "px-2"], ["vcl-button", "", "square", "", 1, "transparent", 3, "title"], [1, "flex", "px-2", "rs-main"], [1, "my-2", "px-2"], [3, "valueChange", "label", "categories", "value"], ["queryParamsHandling", "preserve", 3, "click", "routerLink", "routerLinkActive"], ["vclPrepend", "", 3, "icon"], [3, "label", "categories", "value"], ["target", "_blank", "rel", "noopener noreferrer", 1, "vcl-link", 3, "href"], [3, "rootLabel", "rootUrl", "breadcrumbsToExclude"], [1, "flex"], [3, "organizationSelected", "accountAction", "searchChange", "organizations", "user", "selectedOrganizationId"]], template: function RcLayoutShellComponent_Template(rf, ctx) { if (rf & 1) {
+    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcLayoutShellComponent, selectors: [["rc-layout-shell"]], inputs: { user: "user", organizations: "organizations", selectedOrganizationId: "selectedOrganizationId", showProfile: "showProfile", showPreferences: "showPreferences", showSignOut: "showSignOut" }, outputs: { organizationSelected: "organizationSelected", accountAction: "accountAction", searchChange: "searchChange" }, ngContentSelectors: _c1, decls: 29, vars: 33, consts: [["navItem", "vclNavigationItem"], [1, "layout-shell-container", 3, "backdropClick"], [3, "mode", "opened"], [1, "h-100p", "layout-shell-navigation"], [1, "row", "justify-content-between", "py-1", "px-2"], [3, "brandName", "logoUrl", "logoWidth"], ["vcl-button", "", "square", "", 1, "transparent", 3, "click", "title"], [3, "icon"], ["queryParamsHandling", "preserve", 3, "routerLink", "routerLinkActive"], [1, "py-1", "px-2", "rs-navigation-item-bottom-container"], [1, "vcl-text-muted", "vcl-text-xs", "mt-2"], [1, "row", "align-items-center", "px-2"], ["vcl-button", "", "square", "", 1, "transparent", 3, "title"], [1, "flex", "px-2", "rs-main"], [1, "my-2", "px-2"], [3, "valueChange", "label", "categories", "value"], ["queryParamsHandling", "preserve", 3, "click", "routerLink", "routerLinkActive"], ["vclPrepend", "", 3, "icon"], [3, "label", "categories", "value"], ["target", "_blank", "rel", "noopener noreferrer", 1, "vcl-link", 3, "href"], [3, "rootLabel", "rootUrl", "breadcrumbsToExclude"], [1, "flex"], [3, "organizationSelected", "accountAction", "searchChange", "organizations", "user", "selectedOrganizationId"]], template: function RcLayoutShellComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵprojectionDef(_c0);
             i0.ɵɵelementStart(0, "vcl-drawer-container", 1);
             i0.ɵɵlistener("backdropClick", function RcLayoutShellComponent_Template_vcl_drawer_container_backdropClick_0_listener() { return ctx.toggleSidebar(); });
@@ -367,41 +377,45 @@ export class RcLayoutShellComponent {
             i0.ɵɵpipe(10, "async");
             i0.ɵɵlistener("click", function RcLayoutShellComponent_Template_button_click_7_listener() { return ctx.toggleSidebar(); });
             i0.ɵɵelement(11, "vcl-icon", 7);
+            i0.ɵɵpipe(12, "async");
             i0.ɵɵelementEnd()();
-            i0.ɵɵconditionalCreate(12, RcLayoutShellComponent_Conditional_12_Template, 2, 3);
-            i0.ɵɵpipe(13, "async");
-            i0.ɵɵrepeaterCreate(14, RcLayoutShellComponent_For_15_Template, 9, 10, "vcl-navigation-item", 8, i0.ɵɵrepeaterTrackByIndex);
-            i0.ɵɵpipe(16, "async");
-            i0.ɵɵelementStart(17, "div", 9);
-            i0.ɵɵconditionalCreate(18, RcLayoutShellComponent_Conditional_18_Template, 2, 3);
-            i0.ɵɵpipe(19, "async");
-            i0.ɵɵconditionalCreate(20, RcLayoutShellComponent_Conditional_20_Template, 4, 3, "div", 10);
+            i0.ɵɵconditionalCreate(13, RcLayoutShellComponent_Conditional_13_Template, 2, 3);
+            i0.ɵɵpipe(14, "async");
+            i0.ɵɵrepeaterCreate(15, RcLayoutShellComponent_For_16_Template, 9, 10, "vcl-navigation-item", 8, i0.ɵɵrepeaterTrackByIndex);
+            i0.ɵɵpipe(17, "async");
+            i0.ɵɵelementStart(18, "div", 9);
+            i0.ɵɵconditionalCreate(19, RcLayoutShellComponent_Conditional_19_Template, 2, 3);
+            i0.ɵɵpipe(20, "async");
+            i0.ɵɵconditionalCreate(21, RcLayoutShellComponent_Conditional_21_Template, 4, 3, "div", 10);
             i0.ɵɵelementEnd()()();
-            i0.ɵɵelementStart(21, "header", 11);
-            i0.ɵɵconditionalCreate(22, RcLayoutShellComponent_Conditional_22_Template, 3, 3, "button", 12);
-            i0.ɵɵpipe(23, "async");
-            i0.ɵɵprojection(24, 0, null, RcLayoutShellComponent_ProjectionFallback_24_Template, 3, 7);
+            i0.ɵɵelementStart(22, "header", 11);
+            i0.ɵɵconditionalCreate(23, RcLayoutShellComponent_Conditional_23_Template, 4, 8, "button", 12);
+            i0.ɵɵpipe(24, "async");
+            i0.ɵɵprojection(25, 0, null, RcLayoutShellComponent_ProjectionFallback_25_Template, 3, 7);
             i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(26, "main", 13);
-            i0.ɵɵprojection(27, 1);
+            i0.ɵɵelementStart(27, "main", 13);
+            i0.ɵɵprojection(28, 1);
             i0.ɵɵelementEnd()();
         } if (rf & 2) {
             i0.ɵɵadvance();
-            i0.ɵɵproperty("mode", i0.ɵɵpipeBind1(2, 10, ctx.isHandset$) ? "over" : "side")("opened", i0.ɵɵpipeBind1(3, 12, ctx.collapsed$) === false);
+            i0.ɵɵproperty("mode", i0.ɵɵpipeBind1(2, 13, ctx.isHandset$) ? "over" : "side")("opened", i0.ɵɵpipeBind1(3, 15, ctx.collapsed$) === false);
             i0.ɵɵadvance(5);
             i0.ɵɵproperty("brandName", ctx.config.appName)("logoUrl", ctx.config.logoUrl)("logoWidth", ctx.config.logoWidth ?? 100);
             i0.ɵɵadvance();
-            i0.ɵɵproperty("title", i0.ɵɵpipeBind1(8, 14, ctx.collapsed$) ? i0.ɵɵpipeBind1(9, 16, ctx.label$((ctx.config.uiText == null ? null : ctx.config.uiText.showSidebar) || "Show sidebar")) : i0.ɵɵpipeBind1(10, 18, ctx.label$((ctx.config.uiText == null ? null : ctx.config.uiText.hideSidebar) || "Hide sidebar")));
-            i0.ɵɵadvance(5);
-            i0.ɵɵconditional(i0.ɵɵpipeBind1(13, 20, ctx.isHandset$) ? 12 : -1);
-            i0.ɵɵadvance(2);
-            i0.ɵɵrepeater(i0.ɵɵpipeBind1(16, 22, ctx.facade.visibleNavItems$));
+            i0.ɵɵproperty("title", i0.ɵɵpipeBind1(8, 17, ctx.collapsed$) ? i0.ɵɵpipeBind1(9, 19, ctx.label$((ctx.config.uiText == null ? null : ctx.config.uiText.showSidebar) || "Show sidebar")) : i0.ɵɵpipeBind1(10, 21, ctx.label$((ctx.config.uiText == null ? null : ctx.config.uiText.hideSidebar) || "Hide sidebar")));
             i0.ɵɵadvance(4);
-            i0.ɵɵconditional(i0.ɵɵpipeBind1(19, 24, ctx.isHandset$) === false ? 18 : -1);
+            i0.ɵɵclassMap(ctx.iconClass);
+            i0.ɵɵproperty("icon", i0.ɵɵpipeBind1(12, 23, ctx.icon$) || "");
             i0.ɵɵadvance(2);
-            i0.ɵɵconditional(ctx.footerConfig.enabled ? 20 : -1);
+            i0.ɵɵconditional(i0.ɵɵpipeBind1(14, 25, ctx.isHandset$) ? 13 : -1);
             i0.ɵɵadvance(2);
-            i0.ɵɵconditional(i0.ɵɵpipeBind1(23, 26, ctx.collapsed$) ? 22 : -1);
+            i0.ɵɵrepeater(i0.ɵɵpipeBind1(17, 27, ctx.facade.visibleNavItems$));
+            i0.ɵɵadvance(4);
+            i0.ɵɵconditional(i0.ɵɵpipeBind1(20, 29, ctx.isHandset$) === false ? 19 : -1);
+            i0.ɵɵadvance(2);
+            i0.ɵɵconditional(ctx.footerConfig.enabled ? 21 : -1);
+            i0.ɵɵadvance(2);
+            i0.ɵɵconditional(i0.ɵɵpipeBind1(24, 31, ctx.collapsed$) ? 23 : -1);
         } }, dependencies: [RouterModule, i1.RouterLink, i1.RouterLinkActive, VCLDrawerModule, i2.VCLDrawerComponent, i2.VCLDrawerContainerComponent, VCLNavigationModule, i2.VCLNavigationComponent, i2.VCLNavigationItemComponent, i2.VCLNavigationLabelComponent, VCLIcogramModule, i2.VCLIcogramComponent, i2.VCLIconComponent, RcCategorySelectComponent,
             VCLIconModule,
             VCLInputModule,
@@ -429,7 +443,7 @@ export class RcLayoutShellComponent {
                     VCLFormControlGroupModule,
                     CommonModule,
                     RcHeaderToolbarComponent,
-                ], template: "<vcl-drawer-container\n  (backdropClick)=\"toggleSidebar()\"\n  class=\"layout-shell-container\"\n>\n  <vcl-drawer\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"(collapsed$ | async) === false\"\n  >\n    <vcl-navigation class=\"h-100p layout-shell-navigation\">\n      <div class=\"row justify-content-between py-1 px-2\">\n        <rc-brand\n          [brandName]=\"config.appName\"\n          [logoUrl]=\"config.logoUrl\"\n          [logoWidth]=\"config.logoWidth ?? 100\"\n        />\n        <button\n          vcl-button\n          square\n          class=\"transparent\"\n          [title]=\"\n            (collapsed$ | async)\n              ? (label$(config.uiText?.showSidebar || 'Show sidebar') | async)\n              : (label$(config.uiText?.hideSidebar || 'Hide sidebar') | async)\n          \"\n          (click)=\"toggleSidebar()\"\n        >\n          <vcl-icon\n            class=\"scale155p\"\n            icon=\"mdi mdi-page-layout-sidebar-left\"\n          />\n        </button>\n      </div>\n\n      @if (isHandset$ | async) { @if (categories$ | async; as categories) {\n      <div class=\"my-2 px-2\">\n        <rc-category-select\n          [label]=\"(label$(config.uiText?.selectCategory || '') | async) || ''\"\n          [categories]=\"(categories$ | async) || []\"\n          [value]=\"activeCategory$ | async\"\n          (valueChange)=\"onSelectCategory($event)\"\n        />\n      </div>\n      } } @for (item of (facade.visibleNavItems$ | async); track $index) {\n      <vcl-navigation-item\n        #navItem=\"vclNavigationItem\"\n        [routerLink]=\"item.children?.length ? null : item.route\"\n        [routerLinkActive]=\"item.children?.length ? [] : ['selected']\"\n        queryParamsHandling=\"preserve\"\n        (click)=\"\n          !item.children?.length && navigate(item); $event.stopPropagation()\n        \"\n      >\n        <vcl-navigation-label>\n          <vcl-icogram>\n            @if (item.children?.length) {\n            <vcl-icon\n              vclPrepend\n              [icon]=\"navItem.opened ? 'vcl:chevron-down' : 'vcl:chevron-right'\"\n            ></vcl-icon>\n            } @if (!item.children?.length) {\n            <vcl-icon\n              vclPrepend\n              [icon]=\"item.icon\"\n            ></vcl-icon>\n            }\n\n            {{ label$(item.label) | async }}\n          </vcl-icogram>\n        </vcl-navigation-label>\n\n        @if (item.children?.length) {\n        <vcl-navigation>\n          @for (child of item.children; track $index) {\n          <vcl-navigation-item\n            [routerLink]=\"child.route\"\n            [routerLinkActive]=\"['selected']\"\n            queryParamsHandling=\"preserve\"\n            (click)=\"navigate(child); $event.stopPropagation()\"\n          >\n            <vcl-navigation-label>\n              <vcl-icogram>\n                <vcl-icon\n                  vclPrepend\n                  [icon]=\"child.icon\"\n                ></vcl-icon>\n                {{ label$(child.label) | async }}\n              </vcl-icogram>\n            </vcl-navigation-label>\n          </vcl-navigation-item>\n          }\n        </vcl-navigation>\n        }\n      </vcl-navigation-item>\n      }\n\n      <div class=\"py-1 px-2 rs-navigation-item-bottom-container\">\n        @if ((isHandset$ | async) === false) { @if (categories$ | async; as\n        categories) {\n        <rc-category-select\n          [label]=\"(label$(config.uiText?.selectCategory || '') | async) || ''\"\n          [categories]=\"categories\"\n          [value]=\"activeCategory$ | async\"\n          (valueChange)=\"onSelectCategory($event)\"\n        />\n        } } @if (footerConfig.enabled) {\n        <div class=\"vcl-text-muted vcl-text-xs mt-2\">\n          @if (footerConfig.showYear) { \u00A9 {{ footerConfig.year }}\n          } @if (footerConfig.companyName) { @if (footerConfig.companyUrl) {\n          <a\n            [href]=\"footerConfig.companyUrl\"\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n            class=\"vcl-link\"\n          >\n            {{ footerConfig.companyName }}\n          </a>\n          } @else {\n          {{ footerConfig.companyName }}\n          } } @if (footerConfig.text) { .\n          {{ label$(footerConfig.text) | async }}\n          }\n        </div>\n        }\n      </div>\n    </vcl-navigation>\n  </vcl-drawer>\n\n  <header class=\"row align-items-center px-2\">\n    @if (collapsed$ | async) {\n    <button\n      vcl-button\n      square\n      class=\"transparent\"\n      [title]=\"label$(config.uiText?.showSidebar ?? 'Show sidebar') | async\"\n      (click)=\"toggleSidebar()\"\n    >\n      <vcl-icon\n        class=\"scale155p\"\n        icon=\"mdi mdi-page-layout-sidebar-left\"\n      />\n    </button>\n    }\n\n    <ng-content select=\"[layoutHeader]\">\n      <rc-breadcrumb\n        [rootLabel]=\"'Home'\"\n        [rootUrl]=\"'/'\"\n        [breadcrumbsToExclude]=\"['Home']\"\n      />\n\n      <div class=\"flex\"></div>\n\n      <rc-header-toolbar\n        [organizations]=\"organizations\"\n        [user]=\"user\"\n        [selectedOrganizationId]=\"selectedOrganizationId\"\n        (organizationSelected)=\"onSelectOrganization($event)\"\n        (accountAction)=\"onAccountItemSelected($event)\"\n        (searchChange)=\"onSearchChange($event)\"\n      />\n    </ng-content>\n  </header>\n\n  <main class=\"flex px-2 rs-main\">\n    <ng-content />\n  </main>\n</vcl-drawer-container>\n", styles: [":host{display:block;height:100vh;overflow:hidden}.layout-shell-container{display:flex;flex-direction:column;height:100%}.layout-shell-container>header{flex:0 0 auto;z-index:1;box-sizing:border-box}.layout-shell-container>main.rs-main{flex:1 1 auto;min-height:0}.rs-navigation-item-bottom-container{position:absolute;bottom:.5em}\n"] }]
+                ], template: "<vcl-drawer-container\n  (backdropClick)=\"toggleSidebar()\"\n  class=\"layout-shell-container\"\n>\n  <vcl-drawer\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"(collapsed$ | async) === false\"\n  >\n    <vcl-navigation class=\"h-100p layout-shell-navigation\">\n      <div class=\"row justify-content-between py-1 px-2\">\n        <rc-brand\n          [brandName]=\"config.appName\"\n          [logoUrl]=\"config.logoUrl\"\n          [logoWidth]=\"config.logoWidth ?? 100\"\n        />\n        <button\n          vcl-button\n          square\n          class=\"transparent\"\n          [title]=\"\n            (collapsed$ | async)\n              ? (label$(config.uiText?.showSidebar || 'Show sidebar') | async)\n              : (label$(config.uiText?.hideSidebar || 'Hide sidebar') | async)\n          \"\n          (click)=\"toggleSidebar()\"\n        >\n          <vcl-icon\n            [class]=\"iconClass\"\n            [icon]=\"(icon$ | async) || ''\"\n          />\n        </button>\n      </div>\n\n      @if (isHandset$ | async) { @if (categories$ | async; as categories) {\n      <div class=\"my-2 px-2\">\n        <rc-category-select\n          [label]=\"(label$(config.uiText?.selectCategory || '') | async) || ''\"\n          [categories]=\"(categories$ | async) || []\"\n          [value]=\"activeCategory$ | async\"\n          (valueChange)=\"onSelectCategory($event)\"\n        />\n      </div>\n      } } @for (item of (facade.visibleNavItems$ | async); track $index) {\n      <vcl-navigation-item\n        #navItem=\"vclNavigationItem\"\n        [routerLink]=\"item.children?.length ? null : item.route\"\n        [routerLinkActive]=\"item.children?.length ? [] : ['selected']\"\n        queryParamsHandling=\"preserve\"\n        (click)=\"\n          !item.children?.length && navigate(item); $event.stopPropagation()\n        \"\n      >\n        <vcl-navigation-label>\n          <vcl-icogram>\n            @if (item.children?.length) {\n            <vcl-icon\n              vclPrepend\n              [icon]=\"navItem.opened ? 'vcl:chevron-down' : 'vcl:chevron-right'\"\n            ></vcl-icon>\n            } @if (!item.children?.length) {\n            <vcl-icon\n              vclPrepend\n              [icon]=\"item.icon\"\n            ></vcl-icon>\n            }\n\n            {{ label$(item.label) | async }}\n          </vcl-icogram>\n        </vcl-navigation-label>\n\n        @if (item.children?.length) {\n        <vcl-navigation>\n          @for (child of item.children; track $index) {\n          <vcl-navigation-item\n            [routerLink]=\"child.route\"\n            [routerLinkActive]=\"['selected']\"\n            queryParamsHandling=\"preserve\"\n            (click)=\"navigate(child); $event.stopPropagation()\"\n          >\n            <vcl-navigation-label>\n              <vcl-icogram>\n                <vcl-icon\n                  vclPrepend\n                  [icon]=\"child.icon\"\n                ></vcl-icon>\n                {{ label$(child.label) | async }}\n              </vcl-icogram>\n            </vcl-navigation-label>\n          </vcl-navigation-item>\n          }\n        </vcl-navigation>\n        }\n      </vcl-navigation-item>\n      }\n\n      <div class=\"py-1 px-2 rs-navigation-item-bottom-container\">\n        @if ((isHandset$ | async) === false) { @if (categories$ | async; as\n        categories) {\n        <rc-category-select\n          [label]=\"(label$(config.uiText?.selectCategory || '') | async) || ''\"\n          [categories]=\"categories\"\n          [value]=\"activeCategory$ | async\"\n          (valueChange)=\"onSelectCategory($event)\"\n        />\n        } } @if (footerConfig.enabled) {\n        <div class=\"vcl-text-muted vcl-text-xs mt-2\">\n          @if (footerConfig.showYear) { \u00A9 {{ footerConfig.year }}\n          } @if (footerConfig.companyName) { @if (footerConfig.companyUrl) {\n          <a\n            [href]=\"footerConfig.companyUrl\"\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n            class=\"vcl-link\"\n          >\n            {{ footerConfig.companyName }}\n          </a>\n          } @else {\n          {{ footerConfig.companyName }}\n          } } @if (footerConfig.text) { .\n          {{ label$(footerConfig.text) | async }}\n          }\n        </div>\n        }\n      </div>\n    </vcl-navigation>\n  </vcl-drawer>\n\n  <header class=\"row align-items-center px-2\">\n    @if (collapsed$ | async) {\n    <button\n      vcl-button\n      square\n      class=\"transparent\"\n      [title]=\"label$(config.uiText?.showSidebar ?? 'Show sidebar') | async\"\n      (click)=\"toggleSidebar()\"\n    >\n      <vcl-icon\n        [class]=\"iconClass\"\n        [icon]=\"(icon$ | async) || ''\"\n      />\n    </button>\n    }\n\n    <ng-content select=\"[layoutHeader]\">\n      <rc-breadcrumb\n        [rootLabel]=\"'Home'\"\n        [rootUrl]=\"'/'\"\n        [breadcrumbsToExclude]=\"['Home']\"\n      />\n\n      <div class=\"flex\"></div>\n\n      <rc-header-toolbar\n        [organizations]=\"organizations\"\n        [user]=\"user\"\n        [selectedOrganizationId]=\"selectedOrganizationId\"\n        (organizationSelected)=\"onSelectOrganization($event)\"\n        (accountAction)=\"onAccountItemSelected($event)\"\n        (searchChange)=\"onSearchChange($event)\"\n      />\n    </ng-content>\n  </header>\n\n  <main class=\"flex px-2 rs-main\">\n    <ng-content />\n  </main>\n</vcl-drawer-container>\n", styles: [":host{display:block;height:100vh;overflow:hidden}.layout-shell-container{display:flex;flex-direction:column;height:100%}.layout-shell-container>header{flex:0 0 auto;z-index:1;box-sizing:border-box}.layout-shell-container>main.rs-main{flex:1 1 auto;min-height:0}.rs-navigation-item-bottom-container{position:absolute;bottom:.5em}\n"] }]
     }], () => [], { user: [{
             type: Input
         }], organizations: [{
