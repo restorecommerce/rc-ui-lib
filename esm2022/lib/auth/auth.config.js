@@ -1,5 +1,5 @@
 import { InjectionToken, makeEnvironmentProviders, } from '@angular/core';
-export const AUTH_BRANDING_CONFIG = new InjectionToken('AUTH_BRANDING_CONFIG');
+export const AUTH_LAYOUT_CONFIG = new InjectionToken('AUTH_LAYOUT_CONFIG');
 /**
  * Host apps use this in their providers:
  *
@@ -11,7 +11,7 @@ export const AUTH_BRANDING_CONFIG = new InjectionToken('AUTH_BRANDING_CONFIG');
 export function provideAuthBranding(config) {
     return makeEnvironmentProviders([
         {
-            provide: AUTH_BRANDING_CONFIG,
+            provide: AUTH_LAYOUT_CONFIG,
             useValue: config,
         },
     ]);
