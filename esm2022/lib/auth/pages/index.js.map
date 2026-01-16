@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/modules/rc-ui/src/lib/auth/pages/index.ts"],"names":[],"mappings":"AAAA,cAAc,WAAW,CAAC","sourcesContent":["export * from './sign-in';\n"]}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/modules/rc-ui/src/lib/auth/pages/index.ts"],"names":[],"mappings":"AAAA,cAAc,WAAW,CAAC;AAC1B,cAAc,WAAW,CAAC;AAC1B,cAAc,qBAAqB,CAAC","sourcesContent":["export * from './sign-in';\nexport * from './sign-up';\nexport * from './password-recovery';\n"]}

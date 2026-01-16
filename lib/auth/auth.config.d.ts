@@ -1,5 +1,5 @@
 import { EnvironmentProviders, InjectionToken } from '@angular/core';
-import { RcPasswordRecoveryTranslations, RcSignInTranslations, RcSignUpTranslations } from './auth.model';
+import { RcPasswordRecoveryTranslations, RcSignUpTranslations, RcSignInTranslations } from './pages';
 export type RcAuthForgotPasswordTarget = {
     kind: 'route';
     route: string | string[];
@@ -18,6 +18,7 @@ export interface RcAuthLayoutConfig {
         logoUrl: string;
         logoAlt?: string;
         tagline?: string;
+        logoSize?: number;
     };
     i18n?: RcAuthI18nConfig;
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../packages/modules/rc-ui/src/lib/auth/pages/sign-up/index.ts"],"names":[],"mappings":"AAAA,cAAc,qBAAqB,CAAC;AACpC,cAAc,gBAAgB,CAAC;AAC/B,cAAc,kBAAkB,CAAC","sourcesContent":["export * from './sign-up.component';\nexport * from './sign-up.i18n';\nexport * from './sign-up.models';\n"]}
