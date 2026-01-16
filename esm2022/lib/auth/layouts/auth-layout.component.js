@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RcCenteredPageComponent, RcCardComponent, } from '../../shared';
+import { RcCenteredPageComponent, RcCardComponent } from '../../shared';
 import * as i0 from "@angular/core";
 const _c0 = ["*"];
 export class RsAuthLayoutComponent {
@@ -29,5 +29,5 @@ export class RsAuthLayoutComponent {
                 imports: [RcCenteredPageComponent, RcCardComponent],
             }]
     }], null, null); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RsAuthLayoutComponent, { className: "RsAuthLayoutComponent", filePath: "lib/auth/layouts/auth-layout.component.ts", lineNumber: 23 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RsAuthLayoutComponent, { className: "RsAuthLayoutComponent", filePath: "lib/auth/layouts/auth-layout.component.ts", lineNumber: 20 }); })();
 //# sourceMappingURL=auth-layout.component.js.map
