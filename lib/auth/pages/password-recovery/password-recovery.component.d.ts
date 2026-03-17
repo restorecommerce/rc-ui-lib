@@ -1,5 +1,7 @@
 import { EventEmitter } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
 import { RcAuthLayoutConfig } from '../../auth.config';
+import { ZxcvbnMinScoreError } from '../../validators';
 import { RcPasswordRecoveryTranslations } from './password-recovery.i18n';
 import { RcPasswordRecoveryState } from './password-recovery.models';
 import * as i0 from "@angular/core";
@@ -23,6 +25,9 @@ export declare class RcPasswordRecoveryComponent {
     }>;
     submitIdentifier(): void;
     submitPassword(): void;
+    minScore: number;
+    get passwordCtrl(): AbstractControl;
+    get zxcvbnErr(): ZxcvbnMinScoreError | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<RcPasswordRecoveryComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RcPasswordRecoveryComponent, "rc-password-recovery", never, { "config": { "alias": "config"; "required": true; }; "state": { "alias": "state"; "required": true; }; }, { "requestReset": "requestReset"; "submitNewPassword": "submitNewPassword"; }, never, never, true, never>;
 }

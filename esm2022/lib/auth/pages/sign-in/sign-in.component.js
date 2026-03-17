@@ -1,11 +1,11 @@
+import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output, computed, } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { DEFAULT_SIGN_IN_TRANSLATIONS, } from './sign-in.i18n';
-import { VCLButtonModule, VCLCheckboxModule, VCLFormControlGroupModule, VCLInputModule, VCLPasswordInputModule, } from '@vcl/ng-vcl';
 import { RouterModule } from '@angular/router';
-import { RsAuthLayoutComponent } from '../../layouts';
+import { VCLButtonModule, VCLCheckboxModule, VCLFormControlGroupModule, VCLInputModule, VCLPasswordInputModule, } from '@vcl/ng-vcl';
 import { RcTranslatePipe } from '../../../i18n';
-import { AsyncPipe, NgClass } from '@angular/common';
+import { RsAuthLayoutComponent } from '../../layouts';
+import { DEFAULT_SIGN_IN_TRANSLATIONS, } from './sign-in.i18n';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/forms";
 import * as i2 from "@vcl/ng-vcl";
@@ -158,5 +158,5 @@ export class RcSignInComponent {
         }], action: [{
             type: Output
         }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcSignInComponent, { className: "RcSignInComponent", filePath: "lib/auth/pages/sign-in/sign-in.component.ts", lineNumber: 45 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcSignInComponent, { className: "RcSignInComponent", filePath: "lib/auth/pages/sign-in/sign-in.component.ts", lineNumber: 47 }); })();
 //# sourceMappingURL=sign-in.component.js.map

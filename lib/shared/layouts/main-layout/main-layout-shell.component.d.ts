@@ -1,7 +1,7 @@
 import { EventEmitter } from '@angular/core';
-import { RcLayoutNavCategoryId, RcLayoutNavItem, RcTranslatable, ShellFooterConfig } from './main-layout-config.model';
-import { RcLayoutFacade } from './main-layout.facade';
 import { RcHeaderOrganization, RcHeaderUser } from '../header-toolbar';
+import { RcLayoutNavItem, RcTranslatable, ShellFooterConfig } from './main-layout-config.model';
+import { RcLayoutFacade } from './main-layout.facade';
 import * as i0 from "@angular/core";
 export declare class RcLayoutShellComponent {
     private router;
@@ -17,15 +17,12 @@ export declare class RcLayoutShellComponent {
     organizationSelected: EventEmitter<string>;
     accountAction: EventEmitter<"profile" | "preferences" | "sign-out">;
     searchChange: EventEmitter<string>;
-    private readonly destroyRef;
     readonly defaultOpenIcon = "mdi mdi-page-layout-sidebar-left";
     readonly defaultCloseIcon = "mdi mdi-page-layout-sidebar-right";
     constructor();
     isHandset$: import("rxjs").Observable<boolean>;
     collapsed$: import("rxjs").Observable<boolean>;
     categories$: import("rxjs").Observable<import("@console/rc-ui").RcLayoutNavCategory[]>;
-    activeCategory$: import("rxjs").Observable<string>;
-    visibleNavItems$: import("rxjs").Observable<RcLayoutNavItem[]>;
     icon$: import("rxjs").Observable<string>;
     iconClass: string;
     readonly defaultFooterConfig: Required<ShellFooterConfig>;
@@ -41,14 +38,9 @@ export declare class RcLayoutShellComponent {
     navigate(item: RcLayoutNavItem): void;
     onToggleSidebar(isHandset: boolean | null): void;
     toggleSidebar(): void;
-    onSelectCategory(id: RcLayoutNavCategoryId): void;
     onSearchChange(term: string): void;
     onSelectOrganization(id: string): void;
     onAccountItemSelected(value: string): void;
-    private getFirstNavItemForCategory;
-    private flattenNavItems;
-    private syncCategoryWithUrl;
-    private routeMatchesUrl;
     static ɵfac: i0.ɵɵFactoryDeclaration<RcLayoutShellComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RcLayoutShellComponent, "rc-layout-shell", never, { "user": { "alias": "user"; "required": false; }; "organizations": { "alias": "organizations"; "required": false; }; "selectedOrganizationId": { "alias": "selectedOrganizationId"; "required": false; }; "showProfile": { "alias": "showProfile"; "required": false; }; "showPreferences": { "alias": "showPreferences"; "required": false; }; "showSignOut": { "alias": "showSignOut"; "required": false; }; }, { "organizationSelected": "organizationSelected"; "accountAction": "accountAction"; "searchChange": "searchChange"; }, never, ["[layoutHeader]", "*"], true, never>;
 }

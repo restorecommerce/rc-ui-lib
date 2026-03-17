@@ -1,8 +1,8 @@
 import { EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { RcSignInAction, RcSignInState } from './sign-in.models';
-import { RcSignInTranslations } from './sign-in.i18n';
 import { RcAuthLayoutConfig } from '../../auth.config';
+import { RcSignInTranslations } from './sign-in.i18n';
+import { RcSignInAction, RcSignInState } from './sign-in.models';
 import * as i0 from "@angular/core";
 export declare class RcSignInComponent {
     config: RcAuthLayoutConfig;

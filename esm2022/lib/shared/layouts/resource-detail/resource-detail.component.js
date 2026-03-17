@@ -55,13 +55,15 @@ export class RcResourceDetailComponent {
     backIcon = 'mdi mdi-arrow-left';
     backLabel = 'Back';
     // Right/actions
-    showEdit = true;
-    showDelete = true;
+    showEdit = false;
+    showDelete = false;
     back = new EventEmitter();
     edit = new EventEmitter();
     delete = new EventEmitter();
     // Slots
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     actionsTpl;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     subtitleTpl;
     static ɵfac = function RcResourceDetailComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || RcResourceDetailComponent)(); };
     static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcResourceDetailComponent, selectors: [["rc-resource-detail"]], contentQueries: function RcResourceDetailComponent_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
@@ -118,20 +120,20 @@ export class RcResourceDetailComponent {
         <!-- Left -->
         <div class="row center gap-05">
           @if (showBack) {
-          <button
-            type="button"
-            class="button transparent square"
-            [attr.aria-label]="backLabel"
-            (click)="back.emit()"
-          >
-            <div class="icogram">
-              <div
-                class="icon"
-                [ngClass]="backIcon"
-                aria-hidden="true"
-              ></div>
-            </div>
-          </button>
+            <button
+              type="button"
+              class="button transparent square"
+              [attr.aria-label]="backLabel"
+              (click)="back.emit()"
+            >
+              <div class="icogram">
+                <div
+                  class="icon"
+                  [ngClass]="backIcon"
+                  aria-hidden="true"
+                ></div>
+              </div>
+            </button>
           }
 
           <!-- Title -->
@@ -140,7 +142,7 @@ export class RcResourceDetailComponent {
           </div>
 
           @if (subtitleTpl) {
-          <ng-container [ngTemplateOutlet]="subtitleTpl" />
+            <ng-container [ngTemplateOutlet]="subtitleTpl" />
           }
         </div>
 
@@ -148,35 +150,37 @@ export class RcResourceDetailComponent {
         <div class="row center gap-05">
           <!-- Custom actions slot -->
           @if (actionsTpl) {
-          <ng-container [ngTemplateOutlet]="actionsTpl" />
-          } @if (showEdit) {
-          <button
-            type="button"
-            class="button transparent square"
-            aria-label="Edit"
-            (click)="edit.emit()"
-          >
-            <div class="icogram">
-              <div
-                class="icon mdi mdi-pencil"
-                aria-hidden="true"
-              ></div>
-            </div>
-          </button>
-          } @if (showDelete) {
-          <button
-            type="button"
-            class="button transparent square"
-            aria-label="Delete"
-            (click)="delete.emit()"
-          >
-            <div class="icogram">
-              <div
-                class="icon mdi mdi-delete-outline"
-                aria-hidden="true"
-              ></div>
-            </div>
-          </button>
+            <ng-container [ngTemplateOutlet]="actionsTpl" />
+          }
+          @if (showEdit) {
+            <button
+              type="button"
+              class="button transparent square"
+              aria-label="Edit"
+              (click)="edit.emit()"
+            >
+              <div class="icogram">
+                <div
+                  class="icon mdi mdi-pencil"
+                  aria-hidden="true"
+                ></div>
+              </div>
+            </button>
+          }
+          @if (showDelete) {
+            <button
+              type="button"
+              class="button transparent square"
+              aria-label="Delete"
+              (click)="delete.emit()"
+            >
+              <div class="icogram">
+                <div
+                  class="icon mdi mdi-delete-outline"
+                  aria-hidden="true"
+                ></div>
+              </div>
+            </button>
           }
         </div>
       </div>
@@ -214,5 +218,5 @@ export class RcResourceDetailComponent {
             type: ContentChild,
             args: ['subtitleTemplate', { read: TemplateRef }]
         }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcResourceDetailComponent, { className: "RcResourceDetailComponent", filePath: "lib/shared/layouts/resource-detail/resource-detail.component.ts", lineNumber: 115 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcResourceDetailComponent, { className: "RcResourceDetailComponent", filePath: "lib/shared/layouts/resource-detail/resource-detail.component.ts", lineNumber: 117 }); })();
 //# sourceMappingURL=resource-detail.component.js.map

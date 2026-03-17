@@ -1,9 +1,10 @@
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators, } from '@angular/forms';
 import { VCLButtonComponent, VCLFormControlGroupModule, VCLInputModule, VCLPasswordInputModule, } from '@vcl/ng-vcl';
 import { RcTranslatePipe } from '../../../i18n';
 import { RsAuthLayoutComponent } from '../../layouts';
+import { zxcvbnMinScoreValidator } from '../../validators';
 import { DEFAULT_PASSWORD_RECOVERY_TRANSLATIONS, } from './password-recovery.i18n';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/forms";
@@ -66,6 +67,48 @@ function RcPasswordRecoveryComponent_Conditional_12_Template(rf, ctx) { if (rf &
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 3, i0.ɵɵpipeBind1(2, 1, ctx_r0.t().emailSentDescription)), " ");
 } }
+function RcPasswordRecoveryComponent_Conditional_13_Conditional_12_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 15);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r0 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate2("Strength: ", ctx_r0.zxcvbnErr.score, "/4 (min ", ctx_r0.minScore, ")");
+} }
+function RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Conditional_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 17);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const err_r4 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate(err_r4.feedback.warning);
+} }
+function RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Conditional_1_For_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 18);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const s_r5 = ctx.$implicit;
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate(s_r5);
+} }
+function RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Conditional_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵrepeaterCreate(0, RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Conditional_1_For_1_Template, 2, 1, "span", 18, i0.ɵɵrepeaterTrackByIndex);
+} if (rf & 2) {
+    const err_r4 = i0.ɵɵnextContext();
+    i0.ɵɵrepeater(err_r4.feedback.suggestions);
+} }
+function RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵconditionalCreate(0, RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Conditional_0_Template, 2, 1, "span", 17);
+    i0.ɵɵconditionalCreate(1, RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Conditional_1_Template, 2, 0);
+} if (rf & 2) {
+    const err_r4 = ctx;
+    i0.ɵɵconditional(err_r4.feedback.warning ? 0 : -1);
+    i0.ɵɵadvance();
+    i0.ɵɵconditional(err_r4.feedback.suggestions.length ? 1 : -1);
+} }
 function RcPasswordRecoveryComponent_Conditional_13_Template(rf, ctx) { if (rf & 1) {
     const _r3 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "form", 8);
@@ -77,31 +120,45 @@ function RcPasswordRecoveryComponent_Conditional_13_Template(rf, ctx) { if (rf &
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(6, "vcl-password-input");
     i0.ɵɵelement(7, "input", 12);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(8, "vcl-form-control-group")(9, "vcl-label");
-    i0.ɵɵtext(10);
-    i0.ɵɵpipe(11, "rcTranslate");
-    i0.ɵɵpipe(12, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(13, "vcl-password-input");
-    i0.ɵɵelement(14, "input", 13);
+    i0.ɵɵelementStart(8, "vcl-hint-error", 13);
+    i0.ɵɵtext(9, "Password is required.");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(10, "vcl-hint-error", 14);
+    i0.ɵɵtext(11, "Password must have a length of at least 12 characters");
+    i0.ɵɵelementEnd();
+    i0.ɵɵconditionalCreate(12, RcPasswordRecoveryComponent_Conditional_13_Conditional_12_Template, 2, 2, "span", 15);
+    i0.ɵɵconditionalCreate(13, RcPasswordRecoveryComponent_Conditional_13_Conditional_13_Template, 2, 2);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(14, "vcl-form-control-group")(15, "vcl-label");
+    i0.ɵɵtext(16);
+    i0.ɵɵpipe(17, "rcTranslate");
+    i0.ɵɵpipe(18, "async");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(19, "vcl-password-input");
+    i0.ɵɵelement(20, "input", 16);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(15, "div", 10)(16, "button", 11);
-    i0.ɵɵtext(17);
-    i0.ɵɵpipe(18, "rcTranslate");
-    i0.ɵɵpipe(19, "async");
+    i0.ɵɵelementStart(21, "div", 10)(22, "button", 11);
+    i0.ɵɵtext(23);
+    i0.ɵɵpipe(24, "rcTranslate");
+    i0.ɵɵpipe(25, "async");
     i0.ɵɵelementEnd()()();
 } if (rf & 2) {
+    let tmp_4_0;
     const ctx_r0 = i0.ɵɵnextContext();
     i0.ɵɵproperty("formGroup", ctx_r0.passwordForm);
     i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(5, 7, i0.ɵɵpipeBind1(4, 5, ctx_r0.t().passwordLabel)), " ");
-    i0.ɵɵadvance(7);
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(12, 11, i0.ɵɵpipeBind1(11, 9, ctx_r0.t().confirmPasswordLabel)), " ");
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(5, 9, i0.ɵɵpipeBind1(4, 7, ctx_r0.t().passwordLabel)), " ");
+    i0.ɵɵadvance(9);
+    i0.ɵɵconditional(ctx_r0.zxcvbnErr ? 12 : -1);
+    i0.ɵɵadvance();
+    i0.ɵɵconditional((tmp_4_0 = ctx_r0.zxcvbnErr) ? 13 : -1, tmp_4_0);
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(18, 13, i0.ɵɵpipeBind1(17, 11, ctx_r0.t().confirmPasswordLabel)), " ");
     i0.ɵɵadvance(6);
     i0.ɵɵproperty("disabled", ctx_r0.passwordForm.invalid);
     i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(19, 15, i0.ɵɵpipeBind1(18, 13, ctx_r0.t().submit)), " ");
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(25, 17, i0.ɵɵpipeBind1(24, 15, ctx_r0.t().submit)), " ");
 } }
 function RcPasswordRecoveryComponent_Conditional_14_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "p", 6);
@@ -139,7 +196,14 @@ export class RcPasswordRecoveryComponent {
         identifier: ['', Validators.required],
     });
     passwordForm = this.fb.nonNullable.group({
-        password: ['', Validators.required],
+        password: [
+            '',
+            {
+                validators: [Validators.required, Validators.minLength(12)],
+                asyncValidators: [zxcvbnMinScoreValidator(3)],
+                updateOn: 'blur',
+            },
+        ],
         confirmPassword: ['', Validators.required],
     });
     submitIdentifier() {
@@ -156,8 +220,15 @@ export class RcPasswordRecoveryComponent {
             password: this.passwordForm.value.password,
         });
     }
+    minScore = 3;
+    get passwordCtrl() {
+        return this.passwordForm.controls['password'];
+    }
+    get zxcvbnErr() {
+        return this.passwordCtrl.getError('zxcvbnMinScore');
+    }
     static ɵfac = function RcPasswordRecoveryComponent_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || RcPasswordRecoveryComponent)(); };
-    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcPasswordRecoveryComponent, selectors: [["rc-password-recovery"]], inputs: { config: "config", state: "state" }, outputs: { requestReset: "requestReset", submitNewPassword: "submitNewPassword" }, decls: 16, vars: 12, consts: [[1, "w-100p", "col", "justify-center", "align-items-center", "mt-3", "mb-2"], [3, "width", "src", "alt"], [1, "p-2"], [1, "mt-1", "row", "justify-center", "align-item-center"], ["vclForm", "", 1, "form", 3, "formGroup"], [1, "text-center", "mt-3"], [1, "panel", "error", "text-center", "mt-3"], [1, "panel", "success", "text-center", "mt-3"], ["vclForm", "", 1, "form", 3, "ngSubmit", "formGroup"], ["vclInput", "", "formControlName", "identifier"], [1, "row", "mt-3"], ["vcl-button", "", "type", "submit", 1, "w-100p", "emphasized", 3, "disabled"], ["vclInput", "", "formControlName", "password"], ["vclInput", "", "formControlName", "confirmPassword"]], template: function RcPasswordRecoveryComponent_Template(rf, ctx) { if (rf & 1) {
+    static ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: RcPasswordRecoveryComponent, selectors: [["rc-password-recovery"]], inputs: { config: "config", state: "state" }, outputs: { requestReset: "requestReset", submitNewPassword: "submitNewPassword" }, decls: 16, vars: 12, consts: [[1, "w-100p", "col", "justify-center", "align-items-center", "mt-3", "mb-2"], [3, "width", "src", "alt"], [1, "p-2"], [1, "mt-1", "row", "justify-center", "align-item-center"], ["vclForm", "", 1, "form", 3, "formGroup"], [1, "text-center", "mt-3"], [1, "panel", "error", "text-center", "mt-3"], [1, "panel", "success", "text-center", "mt-3"], ["vclForm", "", 1, "form", 3, "ngSubmit", "formGroup"], ["vclInput", "", "formControlName", "identifier"], [1, "row", "mt-3"], ["vcl-button", "", "type", "submit", 1, "w-100p", "emphasized", 3, "disabled"], ["vclInput", "", "formControlName", "password"], ["error", "required"], ["error", "minlength"], [1, "form-control-hint"], ["vclInput", "", "formControlName", "confirmPassword"], [1, "form-control-hint", "warning"], [1, "form-control-hint", "info"]], template: function RcPasswordRecoveryComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "rc-auth-layout")(1, "div", 0);
             i0.ɵɵconditionalCreate(2, RcPasswordRecoveryComponent_Conditional_2_Template, 1, 3, "img", 1);
             i0.ɵɵelementStart(3, "h3", 2);
@@ -171,7 +242,7 @@ export class RcPasswordRecoveryComponent {
             i0.ɵɵelement(10, "hr");
             i0.ɵɵconditionalCreate(11, RcPasswordRecoveryComponent_Conditional_11_Template, 12, 8, "form", 4);
             i0.ɵɵconditionalCreate(12, RcPasswordRecoveryComponent_Conditional_12_Template, 4, 5, "p", 5);
-            i0.ɵɵconditionalCreate(13, RcPasswordRecoveryComponent_Conditional_13_Template, 20, 17, "form", 4);
+            i0.ɵɵconditionalCreate(13, RcPasswordRecoveryComponent_Conditional_13_Template, 26, 19, "form", 4);
             i0.ɵɵconditionalCreate(14, RcPasswordRecoveryComponent_Conditional_14_Template, 4, 5, "p", 6);
             i0.ɵɵconditionalCreate(15, RcPasswordRecoveryComponent_Conditional_15_Template, 4, 5, "p", 7);
             i0.ɵɵelementEnd();
@@ -192,7 +263,7 @@ export class RcPasswordRecoveryComponent {
             i0.ɵɵconditional(ctx.state.status === "invalidToken" ? 14 : -1);
             i0.ɵɵadvance();
             i0.ɵɵconditional(ctx.state.status === "success" ? 15 : -1);
-        } }, dependencies: [ReactiveFormsModule, i1.ɵNgNoValidate, i1.DefaultValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.FormGroupDirective, i1.FormControlName, VCLInputModule, i2.InputDirective, i2.InputFieldComponent, i2.FormControlGroupComponent, i2.VCLLabelDirective, i2.FormDirective, i2.EmbeddedInputFieldLabelDirective, VCLButtonComponent,
+        } }, dependencies: [ReactiveFormsModule, i1.ɵNgNoValidate, i1.DefaultValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.FormGroupDirective, i1.FormControlName, VCLInputModule, i2.InputDirective, i2.InputFieldComponent, i2.FormControlGroupComponent, i2.FormControlHintErrorComponent, i2.VCLLabelDirective, i2.FormDirective, i2.EmbeddedInputFieldLabelDirective, VCLButtonComponent,
             VCLFormControlGroupModule,
             VCLPasswordInputModule, i2.VCLPasswordInputComponent, RsAuthLayoutComponent,
             RcTranslatePipe,
@@ -209,7 +280,7 @@ export class RcPasswordRecoveryComponent {
                     RsAuthLayoutComponent,
                     RcTranslatePipe,
                     AsyncPipe,
-                ], template: "<rc-auth-layout>\n  <!-- Branding -->\n  <div class=\"w-100p col justify-center align-items-center mt-3 mb-2\">\n    @if (config.branding.logoUrl) {\n    <img\n      [width]=\"config.branding.logoSize || 100\"\n      [src]=\"config.branding.logoUrl\"\n      [alt]=\"config.branding.logoAlt\"\n    />\n    }\n    <h3 class=\"p-2\">{{ config.branding.appName }}</h3>\n  </div>\n\n  <!-- Title -->\n  <div class=\"mt-1 row justify-center align-item-center\">\n    <span>{{ t().title | rcTranslate | async }}</span>\n  </div>\n\n  <hr />\n\n  <!-- REQUEST RESET -->\n  @if (state.status === 'idle' || state.status === 'requesting') {\n  <form\n    vclForm\n    class=\"form\"\n    [formGroup]=\"identifierForm\"\n    (ngSubmit)=\"submitIdentifier()\"\n  >\n    <vcl-form-control-group>\n      <vcl-label>\n        {{ t().identifierLabel | rcTranslate | async }}\n      </vcl-label>\n      <vcl-input-field>\n        <input\n          vclInput\n          formControlName=\"identifier\"\n        />\n      </vcl-input-field>\n    </vcl-form-control-group>\n\n    <div class=\"row mt-3\">\n      <button\n        vcl-button\n        type=\"submit\"\n        class=\"w-100p emphasized\"\n        [disabled]=\"identifierForm.invalid || state.status === 'requesting'\"\n      >\n        @if (state.status === 'requesting') {\n        {{ t().loading | rcTranslate | async }}\n        } @else {\n        {{ t().submit | rcTranslate | async }}\n        }\n      </button>\n    </div>\n  </form>\n  }\n\n  <!-- EMAIL SENT -->\n  @if (state.status === 'emailSent') {\n  <p class=\"text-center mt-3\">\n    {{ t().emailSentDescription | rcTranslate | async }}\n  </p>\n  }\n\n  <!-- SET PASSWORD -->\n  @if (state.status === 'settingPassword') {\n  <form\n    vclForm\n    class=\"form\"\n    [formGroup]=\"passwordForm\"\n    (ngSubmit)=\"submitPassword()\"\n  >\n    <vcl-form-control-group>\n      <vcl-label>\n        {{ t().passwordLabel | rcTranslate | async }}\n      </vcl-label>\n      <vcl-password-input>\n        <input\n          vclInput\n          formControlName=\"password\"\n        />\n      </vcl-password-input>\n    </vcl-form-control-group>\n\n    <vcl-form-control-group>\n      <vcl-label>\n        {{ t().confirmPasswordLabel | rcTranslate | async }}\n      </vcl-label>\n      <vcl-password-input>\n        <input\n          vclInput\n          formControlName=\"confirmPassword\"\n        />\n      </vcl-password-input>\n    </vcl-form-control-group>\n\n    <div class=\"row mt-3\">\n      <button\n        vcl-button\n        type=\"submit\"\n        class=\"w-100p emphasized\"\n        [disabled]=\"passwordForm.invalid\"\n      >\n        {{ t().submit | rcTranslate | async }}\n      </button>\n    </div>\n  </form>\n  }\n\n  <!-- INVALID TOKEN -->\n  @if (state.status === 'invalidToken') {\n  <p class=\"panel error text-center mt-3\">\n    {{ t().invalidToken[state.reason] | rcTranslate | async }}\n  </p>\n  }\n\n  <!-- SUCCESS -->\n  @if (state.status === 'success') {\n  <p class=\"panel success text-center mt-3\">\n    {{ t().success | rcTranslate | async }}\n  </p>\n  }\n</rc-auth-layout>\n" }]
+                ], template: "<rc-auth-layout>\n  <!-- Branding -->\n  <div class=\"w-100p col justify-center align-items-center mt-3 mb-2\">\n    @if (config.branding.logoUrl) {\n      <img\n        [width]=\"config.branding.logoSize || 100\"\n        [src]=\"config.branding.logoUrl\"\n        [alt]=\"config.branding.logoAlt\"\n      />\n    }\n    <h3 class=\"p-2\">{{ config.branding.appName }}</h3>\n  </div>\n\n  <!-- Title -->\n  <div class=\"mt-1 row justify-center align-item-center\">\n    <span>{{ t().title | rcTranslate | async }}</span>\n  </div>\n\n  <hr />\n\n  <!-- REQUEST RESET -->\n  @if (state.status === 'idle' || state.status === 'requesting') {\n    <form\n      vclForm\n      class=\"form\"\n      [formGroup]=\"identifierForm\"\n      (ngSubmit)=\"submitIdentifier()\"\n    >\n      <vcl-form-control-group>\n        <vcl-label>\n          {{ t().identifierLabel | rcTranslate | async }}\n        </vcl-label>\n        <vcl-input-field>\n          <input\n            vclInput\n            formControlName=\"identifier\"\n          />\n        </vcl-input-field>\n      </vcl-form-control-group>\n\n      <div class=\"row mt-3\">\n        <button\n          vcl-button\n          type=\"submit\"\n          class=\"w-100p emphasized\"\n          [disabled]=\"identifierForm.invalid || state.status === 'requesting'\"\n        >\n          @if (state.status === 'requesting') {\n            {{ t().loading | rcTranslate | async }}\n          } @else {\n            {{ t().submit | rcTranslate | async }}\n          }\n        </button>\n      </div>\n    </form>\n  }\n\n  <!-- EMAIL SENT -->\n  @if (state.status === 'emailSent') {\n    <p class=\"text-center mt-3\">\n      {{ t().emailSentDescription | rcTranslate | async }}\n    </p>\n  }\n\n  <!-- SET PASSWORD -->\n  @if (state.status === 'settingPassword') {\n    <form\n      vclForm\n      class=\"form\"\n      [formGroup]=\"passwordForm\"\n      (ngSubmit)=\"submitPassword()\"\n    >\n      <vcl-form-control-group>\n        <vcl-label>\n          {{ t().passwordLabel | rcTranslate | async }}\n        </vcl-label>\n        <vcl-password-input>\n          <input\n            vclInput\n            formControlName=\"password\"\n          />\n        </vcl-password-input>\n        <vcl-hint-error error=\"required\">Password is required.</vcl-hint-error>\n        <vcl-hint-error error=\"minlength\"\n          >Password must have a length of at least 12 characters</vcl-hint-error\n        >\n        @if (zxcvbnErr) {\n          <span class=\"form-control-hint\"\n            >Strength: {{ zxcvbnErr.score }}/4 (min {{ minScore }})</span\n          >\n        }\n        @if (zxcvbnErr; as err) {\n          @if (err.feedback.warning) {\n            <span class=\"form-control-hint warning\">{{\n              err.feedback.warning\n            }}</span>\n          }\n          @if (err.feedback.suggestions.length) {\n            @for (s of err.feedback.suggestions; track $index) {\n              <span class=\"form-control-hint info\">{{ s }}</span>\n            }\n          }\n        }\n      </vcl-form-control-group>\n\n      <vcl-form-control-group>\n        <vcl-label>\n          {{ t().confirmPasswordLabel | rcTranslate | async }}\n        </vcl-label>\n        <vcl-password-input>\n          <input\n            vclInput\n            formControlName=\"confirmPassword\"\n          />\n        </vcl-password-input>\n      </vcl-form-control-group>\n\n      <div class=\"row mt-3\">\n        <button\n          vcl-button\n          type=\"submit\"\n          class=\"w-100p emphasized\"\n          [disabled]=\"passwordForm.invalid\"\n        >\n          {{ t().submit | rcTranslate | async }}\n        </button>\n      </div>\n    </form>\n  }\n\n  <!-- INVALID TOKEN -->\n  @if (state.status === 'invalidToken') {\n    <p class=\"panel error text-center mt-3\">\n      {{ t().invalidToken[state.reason] | rcTranslate | async }}\n    </p>\n  }\n\n  <!-- SUCCESS -->\n  @if (state.status === 'success') {\n    <p class=\"panel success text-center mt-3\">\n      {{ t().success | rcTranslate | async }}\n    </p>\n  }\n</rc-auth-layout>\n" }]
     }], null, { config: [{
             type: Input,
             args: [{ required: true }]
@@ -221,5 +292,5 @@ export class RcPasswordRecoveryComponent {
         }], submitNewPassword: [{
             type: Output
         }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcPasswordRecoveryComponent, { className: "RcPasswordRecoveryComponent", filePath: "lib/auth/pages/password-recovery/password-recovery.component.ts", lineNumber: 45 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(RcPasswordRecoveryComponent, { className: "RcPasswordRecoveryComponent", filePath: "lib/auth/pages/password-recovery/password-recovery.component.ts", lineNumber: 51 }); })();
 //# sourceMappingURL=password-recovery.component.js.map
